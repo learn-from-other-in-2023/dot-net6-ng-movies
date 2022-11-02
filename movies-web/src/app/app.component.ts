@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'movies-web';
+  title = 'Movies Web';
+
+  movie = {
+    title: 'The Shawshank Redemption',
+    releaseDate: new Date('1994-09-23'),
+    price: 10.99
+  }
+
+  square(n: number) {
+    return n * n;
+  }
+
 }
