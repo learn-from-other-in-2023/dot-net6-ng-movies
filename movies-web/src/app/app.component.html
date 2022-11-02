@@ -1,0 +1,27 @@
+<h1>Hello Movies</h1>
+
+<div>
+    <p>
+        {{title}}
+    </p>
+
+    <p>
+        Square: {{square(5)}}
+    </p>
+</div>
+
+<div>
+    <h4>Movie Data</h4>
+    <ul>
+        <li>
+            {{movie.title}}
+        </li>
+        <li>
+            {{movie.releaseDate | date:"dd-MMMM-yyyy"}}
+        </li>
+        <li>
+            {{movie.price | currency:"INR":true}}
+            <!-- currency:USD:true -->
+        </li>
+    </ul>
+</div>
