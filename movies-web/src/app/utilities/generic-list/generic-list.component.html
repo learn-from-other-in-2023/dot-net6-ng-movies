@@ -8,7 +8,12 @@
 </div>
 
 <div *ngIf="listForDisplay?.length === 0">
-    <h4>No list of data For Display to display.</h4>
+    <span #empty>
+        <ng-content select="[empty]"></ng-content>
+    </span>
+    <span *ngIf="!empty.innerHTML.trim()">
+        <h4>No list of data For Display to display.</h4>
+    </span>
 </div>
 
 <ng-container *ngIf="listForDisplay && listForDisplay.length > 0">

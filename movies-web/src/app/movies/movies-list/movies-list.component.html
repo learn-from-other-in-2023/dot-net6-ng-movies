@@ -1,4 +1,13 @@
 <app-generic-list [listForDisplay]="movies">
+
+    <!-- <ng-container loading>
+        <h4>Please wait while we load the movies .... </h4>
+    </ng-container> -->
+
+    <ng-container empty>
+        <h4>There are NO movies to dispaly.</h4>
+    </ng-container>
+
     <ng-container content>
         <div *ngFor="let movie of movies; let index = index" class="movie-container">
             <div>
