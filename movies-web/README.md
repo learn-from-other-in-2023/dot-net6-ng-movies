@@ -11,6 +11,9 @@ ng add @angular/material
 
 ng g module material
 
+ng g c menu
+
+ng g c utilities/rating
 ```
 
 ## Development server
