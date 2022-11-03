@@ -10,7 +10,7 @@ export class MoviesListComponent implements OnInit {
   @Input()
   movies: any;
 
-  constructor() { 
+  constructor() {
   }
 
   ngOnInit(): void {
