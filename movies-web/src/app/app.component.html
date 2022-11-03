@@ -10,18 +10,16 @@
     </p>
 </div>
 
-<div>
-    <h4>Movie Data</h4>
-    <ul>
-        <li>
-            {{movie.title}}
-        </li>
-        <li>
-            {{movie.releaseDate | date:"dd-MMMM-yyyy"}}
-        </li>
-        <li>
-            {{movie.price | currency:"INR":true}}
-            <!-- currency:USD:true -->
-        </li>
-    </ul>
+<h2>Movie Data</h2>
+
+<div *ngFor="let movie of movies; let index = index" class="movie-container">
+    <div>
+        {{index+1}}. {{movie.title | uppercase}}
+    </div>
+    <div>
+        {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
+    </div>
+    <div>
+        {{movie.price | currency:"INR":true}}
+    </div>
 </div>
