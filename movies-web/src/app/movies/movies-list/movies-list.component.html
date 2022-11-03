@@ -1,0 +1,20 @@
+<div *ngIf="!movies">
+    <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
+</div>
+
+<div *ngIf="movies?.length === 0">
+    <h4>No movies to display.</h4>
+</div>
+
+<div *ngFor="let movie of movies; let index = index" class="movie-container">
+    <div>
+        {{index+1}}. {{movie.title | uppercase}}
+        <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
+    </div>
+    <div>
+        {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
+    </div>
+    <div>
+        {{movie.price | currency:"INR":true}}
+    </div>
+</div>

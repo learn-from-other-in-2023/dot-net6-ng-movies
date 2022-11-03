@@ -1,27 +1,7 @@
-<h1>Hello Movies</h1>
+<h2>In Theaters</h2>
 
-<div>
-    <p>
-        {{title}}
-    </p>
+<app-movies-list [movies]="moviesInTheaters"></app-movies-list>
 
-    <p>
-        Square: {{square(5)}}
-    </p>
-</div>
+<h2>Future Releases</h2>
 
-<div>
-    <h4>Movie Data</h4>
-    <ul>
-        <li>
-            {{movie.title}}
-        </li>
-        <li>
-            {{movie.releaseDate | date:"dd-MMMM-yyyy"}}
-        </li>
-        <li>
-            {{movie.price | currency:"INR":true}}
-            <!-- currency:USD:true -->
-        </li>
-    </ul>
-</div>
+<app-movies-list [movies]="moviesFutureReleases"></app-movies-list>
