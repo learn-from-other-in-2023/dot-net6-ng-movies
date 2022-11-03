@@ -16,4 +16,8 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  remove(index: number) {
+    this.movies.splice(index, 1);
+  }
+
 }
