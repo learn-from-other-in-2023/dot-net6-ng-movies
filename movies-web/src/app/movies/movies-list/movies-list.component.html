@@ -6,15 +6,17 @@
     <h4>No movies to display.</h4>
 </div>
 
-<div *ngFor="let movie of movies; let index = index" class="movie-container">
-    <div>
-        {{index+1}}. {{movie.title | uppercase}}
-        <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
+<ng-container *ngIf="movies && movies.length > 0">
+    <div *ngFor="let movie of movies; let index = index" class="movie-container">
+        <div>
+            {{index+1}}. {{movie.title | uppercase}}
+            <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
+        </div>
+        <div>
+            {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
+        </div>
+        <div>
+            {{movie.price | currency:"INR":true}}
+        </div>
     </div>
-    <div>
-        {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
-    </div>
-    <div>
-        {{movie.price | currency:"INR":true}}
-    </div>
-</div>
+</ng-container>
