@@ -1,33 +1,7 @@
-<h1>Hello Movies</h1>
+<h2>In Theaters</h2>
 
-<div>
-    <p>
-        {{title}}
-    </p>
+<app-movies-list></app-movies-list>
 
-    <p>
-        Square: {{square(5)}}
-    </p>
-</div>
+<h2>Future Releases</h2>
 
-<h2>Movie Data</h2>
-
-<div *ngIf="!movies">
-    <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
-</div>
-
-<div *ngIf="movies?.length === 0">
-    <h4>No movies to display.</h4>
-</div>
-
-<div *ngFor="let movie of movies; let index = index" class="movie-container">
-    <div>
-        {{index+1}}. {{movie.title | uppercase}}
-    </div>
-    <div>
-        {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
-    </div>
-    <div>
-        {{movie.price | currency:"INR":true}}
-    </div>
-</div>
+<app-movies-list></app-movies-list>
