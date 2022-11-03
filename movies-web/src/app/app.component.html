@@ -12,6 +12,14 @@
 
 <h2>Movie Data</h2>
 
+<div *ngIf="!movies">
+    <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
+</div>
+
+<div *ngIf="movies?.length === 0">
+    <h4>No movies to display.</h4>
+</div>
+
 <div *ngFor="let movie of movies; let index = index" class="movie-container">
     <div>
         {{index+1}}. {{movie.title | uppercase}}
