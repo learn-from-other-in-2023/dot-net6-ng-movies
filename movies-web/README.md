@@ -7,6 +7,7 @@ ng g c movies/movies-list
 
 ng g c utilities/generic-list
 
+ng add @angular/material
 ```
 
 ## Development server
