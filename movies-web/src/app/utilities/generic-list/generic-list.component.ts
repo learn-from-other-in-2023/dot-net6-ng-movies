@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-generic-list',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./generic-list.component.scss']
 })
 export class GenericListComponent implements OnInit {
+
+  @Input()
+  listForDisplay:any;
 
   constructor() { }
 

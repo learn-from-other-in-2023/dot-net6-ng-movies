@@ -1,1 +1,16 @@
-<p>generic-list works!</p>
+<div *ngIf="!listForDisplay">
+    <span #loading>
+        <ng-content select="[loading]"></ng-content>
+    </span>
+    <span *ngIf="!loading.innerHTML.trim()">
+        <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
+    </span>
+</div>
+
+<div *ngIf="listForDisplay?.length === 0">
+    <h4>No list of data For Display to display.</h4>
+</div>
+
+<ng-container *ngIf="listForDisplay && listForDisplay.length > 0">
+    <ng-content select="[content]"></ng-content>
+</ng-container>

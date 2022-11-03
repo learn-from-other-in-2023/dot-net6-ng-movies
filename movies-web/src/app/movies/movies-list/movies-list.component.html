@@ -1,4 +1,21 @@
-<div *ngIf="!movies">
+<app-generic-list [listForDisplay]="movies">
+    <ng-container content>
+        <div *ngFor="let movie of movies; let index = index" class="movie-container">
+            <div>
+                {{index+1}}. {{movie.title | uppercase}}
+                <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
+            </div>
+            <div>
+                {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
+            </div>
+            <div>
+                {{movie.price | currency:"INR":true}}
+            </div>
+        </div>
+    </ng-container>
+</app-generic-list>
+
+<!-- <div *ngIf="!movies">
     <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
 </div>
 
@@ -19,4 +36,4 @@
             {{movie.price | currency:"INR":true}}
         </div>
     </div>
-</ng-container>
+</ng-container> -->
