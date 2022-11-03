@@ -30,17 +30,21 @@ export class AppComponent implements OnInit {
     ];
 
     this.moviesFutureReleases = [
-      // {
-      //   title: 'Black Widow',
-      //   releaseDate: new Date('2021-07-07'),
-      //   price: 10.99
-      // },
-      // {
-      //   title: 'The Godfather II',
-      //   releaseDate: new Date('1974-12-20'),
-      //   price: 11.99
-      // }
+      {
+        title: 'Black Widow',
+        releaseDate: new Date('2021-07-07'),
+        price: 10.99
+      },
+      {
+        title: 'The Godfather II',
+        releaseDate: new Date('1974-12-20'),
+        price: 11.99
+      }
     ];
   }
 
+  handleRating(rate: number) {
+    console.log(rate);
+  }
+  
 }
