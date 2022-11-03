@@ -9,11 +9,15 @@ export class RatingComponent implements OnInit {
 
   @Input()
   maxRating = 5;
+
   @Input()
   selectedRate = 0;
+
   @Output()
   onRating: EventEmitter<number> = new EventEmitter<number>();
+
   previousRate = 0;
+
   maxRatingArr: any[] = [];
 
   constructor() { }
