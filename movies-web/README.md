@@ -5,6 +5,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```angularCLI
 ng g c movies/movies-list
 
+ng g c utilities/generic-list
+
+ng add @angular/material
+
+ng g module material
+
+ng g c menu
+
+ng g c utilities/rating
 ```
 
 ## Development server

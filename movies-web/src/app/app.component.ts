@@ -8,12 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'Movies Web';
-  moviesInTheaters: any[];
-  moviesFutureReleases: any[];
+  moviesInTheaters: any;
+  moviesFutureReleases: any;
 
   constructor() {
-    this.moviesInTheaters = [];
-    this.moviesFutureReleases = [];
   }
 
   ngOnInit(): void {
@@ -45,4 +43,8 @@ export class AppComponent implements OnInit {
     ];
   }
 
+  handleRating(rate: number) {
+    console.log(rate);
+  }
+  
 }

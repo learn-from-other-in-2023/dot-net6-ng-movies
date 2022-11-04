@@ -1,0 +1,21 @@
+<div *ngIf="!listForDisplay">
+    <span #loading>
+        <ng-content select="[loading]"></ng-content>
+    </span>
+    <span *ngIf="!loading.innerHTML.trim()">
+        <img src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif">
+    </span>
+</div>
+
+<div *ngIf="listForDisplay?.length === 0">
+    <span #empty>
+        <ng-content select="[empty]"></ng-content>
+    </span>
+    <span *ngIf="!empty.innerHTML.trim()">
+        <h4>No list of data For Display to display.</h4>
+    </span>
+</div>
+
+<ng-container *ngIf="listForDisplay && listForDisplay.length > 0">
+    <ng-content select="[content]"></ng-content>
+</ng-container>
