@@ -11,34 +11,35 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   constructor() { }
 
   ngAfterViewChecked(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngAfterViewChecked');
   }
 
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngAfterViewInit');
   }
 
   ngAfterContentChecked(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngAfterContentChecked');
   }
 
   ngAfterContentInit(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngAfterContentInit');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
+    console.log('ngOnChanges');
   }
 
   ngDoCheck(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngDoCheck');
   }
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    console.log('ngOnDestroy');
   }
 
   ngOnInit(): void {
+    console.log('ngOnInit');
   }
 
 }
