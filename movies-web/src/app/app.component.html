@@ -1,17 +1,6 @@
 <app-menu></app-menu>
 
 <div class="container">
-    <!--Life cycle Tests-->
-    <input type="text" (input)="userName = $any($event.target).value" />
-
-    <input type="checkbox" checked (change)="display = !display" />
-
-    <app-lifecycletest *ngIf="display" [userName]="userName"></app-lifecycletest>
-
-    <!-- <app-rating (onRating)="handleRating($event)"></app-rating> -->
-</div>
-
-<div class="container">
     <h2>In Theaters</h2>
 
     <app-movies-list [movies]="moviesInTheaters"></app-movies-list>
@@ -24,3 +13,14 @@
 <!-- Template variable Demo -->
 <!-- <input type="file" style="display: none" #fileInput />
 <button (click)="fileInput.click()">Upload</button> -->
+
+<!--Life cycle Tests-->
+<!-- <div class="container">
+    <input type="text" (input)="userName = $any($event.target).value" />
+
+    <input type="checkbox" checked (change)="display = !display" />
+
+    <app-lifecycletest *ngIf="display" [userName]="userName"></app-lifecycletest>
+
+    <app-rating (onRating)="handleRating($event)"></app-rating>
+</div> -->
