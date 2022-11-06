@@ -18,7 +18,7 @@
                 {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
             </div>
             <div>
-                {{movie.price | currency:"INR":true}}
+                {{movie.price | currency:"INR":"symbol":"1.2-2"}}
             </div>
         </div>
     </ng-container>
