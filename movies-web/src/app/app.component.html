@@ -3,7 +3,10 @@
 <div class="container">
     <!--Life cycle Tests-->
     <input type="text" (input)="userName = $any($event.target).value" />
-    <app-lifecycletest [userName]="userName"></app-lifecycletest>
+
+    <input type="checkbox" checked (change)="display = !display" />
+
+    <app-lifecycletest *ngIf="display" [userName]="userName"></app-lifecycletest>
 
     <!-- <app-rating (onRating)="handleRating($event)"></app-rating> -->
 </div>
