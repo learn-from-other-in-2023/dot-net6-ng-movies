@@ -15,6 +15,8 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   @ViewChild(RatingComponent)
   rating: RatingComponent | undefined;
 
+  timer: ReturnType<typeof setInterval> | undefined;
+
   constructor() { }
 
   ngAfterViewChecked(): void {
@@ -43,12 +45,14 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
 
   ngOnDestroy(): void {
     console.log('ngOnDestroy');
+
+    clearInterval(this.timer);
   }
 
   ngOnInit(): void {
     console.log('ngOnInit. Rating Component: ', this.rating);
-    
-    setInterval(() => console.log(new Date()), 1000);
+
+    this.timer = setInterval(() => console.log(new Date()), 1000);
   }
 
   handleRating(rate: number) {
