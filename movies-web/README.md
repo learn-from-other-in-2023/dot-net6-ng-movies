@@ -14,6 +14,8 @@ ng g module material
 ng g c menu
 
 ng g c utilities/rating
+
+ng g c demos/lifecycletest
 ```
 
 ## Development server
