@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  // userName: string = 'Sri Varu';
-  // display: boolean = true;
 
   title = 'Movies Web';
   moviesInTheaters: any;
@@ -46,8 +44,12 @@ export class AppComponent implements OnInit {
     ];
   }
 
-  // handleRating(rate: number) {
+}
+
+
+  // userName: string = 'Sri Varu';
+  // display: boolean = true;
+
+    // handleRating(rate: number) {
   //   console.log(rate);
   // }
-
-}
