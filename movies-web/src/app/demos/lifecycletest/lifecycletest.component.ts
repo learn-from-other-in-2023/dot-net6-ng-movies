@@ -9,7 +9,7 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   , OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
 
   @Input()
-  userName: string | null = '';
+  userName: string | undefined = '';
 
   constructor() { }
 
@@ -30,7 +30,7 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges');
+    console.log(`ngOnChanges ...`, changes);
   }
 
   ngDoCheck(): void {

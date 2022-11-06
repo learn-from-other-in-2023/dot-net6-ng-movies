@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  userName: string | null = 'Sri Varu';
+  userName: string = 'Sri Varu';
   title = 'Movies Web';
   moviesInTheaters: any;
   moviesFutureReleases: any;
