@@ -14,6 +14,17 @@ ng g module material
 ng g c menu
 
 ng g c utilities/rating
+
+ng g c demos/lifecycletest
+```
+
+## Styles
+
+```bash
+./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css
+./node_modules/@angular/material/prebuilt-themes/indigo-pink.css
+./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css
+./node_modules/@angular/material/prebuilt-themes/purple-green.css
 ```
 
 ## Development server

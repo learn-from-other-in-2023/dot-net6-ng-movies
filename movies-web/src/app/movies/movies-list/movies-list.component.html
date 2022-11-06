@@ -10,15 +10,15 @@
 
     <ng-container content>
         <div *ngFor="let movie of movies; let index = index" class="movie-container">
-            <div>
-                {{index+1}}. {{movie.title | uppercase}}
+            <div style="display: flex">
+                <h2>{{index+1}}. {{movie.title | uppercase}}</h2>
                 <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
             </div>
             <div>
                 {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
             </div>
             <div>
-                {{movie.price | currency:"INR":true}}
+                {{movie.price | currency:"INR":"symbol":"1.2-2"}}
             </div>
         </div>
     </ng-container>
