@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { RatingComponent } from 'src/app/utilities/rating/rating.component';
 
 @Component({
   selector: 'app-lifecycletest',
@@ -11,6 +12,9 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   @Input()
   userName: string | undefined = '';
 
+  @ViewChild(RatingComponent)
+  rating: RatingComponent | undefined;
+
   constructor() { }
 
   ngAfterViewChecked(): void {
@@ -18,7 +22,7 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
+    console.log('ngAfterViewInit. Rating Component: ', this.rating);
   }
 
   ngAfterContentChecked(): void {
@@ -42,7 +46,12 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
+    console.log('ngOnInit. Rating Component: ', this.rating);
+    
+    setInterval(() => console.log(new Date()), 1000);
   }
 
+  handleRating(rate: number) {
+    console.log(rate);
+  }
 }
