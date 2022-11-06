@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  userName: string | null = 'Sri Varu';
   title = 'Movies Web';
   moviesInTheaters: any;
   moviesFutureReleases: any;
@@ -46,5 +47,5 @@ export class AppComponent implements OnInit {
   handleRating(rate: number) {
     console.log(rate);
   }
-  
+
 }
