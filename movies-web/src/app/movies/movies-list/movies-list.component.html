@@ -1,24 +1,26 @@
 <app-generic-list [listForDisplay]="movies">
 
-    <!-- <ng-container loading>
-        <h4>Please wait while we load the movies .... </h4>
-    </ng-container> -->
-
     <ng-container empty>
         <h4>There are NO movies to dispaly.</h4>
     </ng-container>
 
     <ng-container content>
-        <div *ngFor="let movie of movies; let index = index" class="movie-container">
-            <div style="display: flex">
-                <h2>{{index+1}}. {{movie.title | uppercase}}</h2>
-                <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
-            </div>
-            <div>
-                {{movie.releaseDate | date:"dd-MMMM-yyyy" | lowercase}}
-            </div>
-            <div>
-                {{movie.price | currency:"INR":"symbol":"1.2-2"}}
+        <div class="movies-container">
+            <div *ngFor="let movie of movies; let index = index" class="movie-container">
+                <a>
+                    <img [src]="movie.poster" alt="Poster" />
+                </a>
+                <p>
+                    <a>{{movie.title}}</a>
+                </p>
+                <div>
+                    <a mat-flat-button color="primary">
+                        Edit
+                    </a>
+                    <button mat-flat-button color="warn" type="button">
+                        Delete
+                    </button>
+                </div>
             </div>
         </div>
     </ng-container>
@@ -46,3 +48,7 @@
         </div>
     </div>
 </ng-container> -->
+
+<!-- <ng-container loading>
+        <h4>Please wait while we load the movies .... </h4>
+    </ng-container> -->
