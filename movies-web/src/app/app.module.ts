@@ -13,6 +13,7 @@ import { LifecycletestComponent } from './demos/lifecycletest/lifecycletest.comp
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
+import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IndexGenresComponent } from './genres/index-genres/index-genres.compone
     RatingComponent,
     LifecycletestComponent,
     HomeComponent,
-    IndexGenresComponent
+    IndexGenresComponent,
+    CreateGenreComponent
   ],
   imports: [
     AppRoutingModule,
