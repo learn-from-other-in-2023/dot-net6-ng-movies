@@ -12,6 +12,7 @@ import { RatingComponent } from './utilities/rating/rating.component';
 import { LifecycletestComponent } from './demos/lifecycletest/lifecycletest.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     MenuComponent,
     RatingComponent,
     LifecycletestComponent,
-    HomeComponent
+    HomeComponent,
+    IndexGenresComponent
   ],
   imports: [
     AppRoutingModule,
