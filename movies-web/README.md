@@ -16,6 +16,8 @@ ng g c menu
 ng g c utilities/rating
 
 ng g c demos/lifecycletest
+
+ng g c home
 ```
 
 ## Styles

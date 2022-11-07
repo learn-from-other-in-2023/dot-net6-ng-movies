@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilities/rating/rating.component';
 import { LifecycletestComponent } from './demos/lifecycletest/lifecycletest.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     GenericListComponent,
     MenuComponent,
     RatingComponent,
-    LifecycletestComponent
+    LifecycletestComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
