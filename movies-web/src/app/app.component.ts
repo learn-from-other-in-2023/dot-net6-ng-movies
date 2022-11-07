@@ -21,12 +21,14 @@ export class AppComponent implements OnInit {
       {
         title: 'The Shawshank Redemption',
         releaseDate: new Date('1994-09-23'),
-        price: 10.99
+        price: 10.99,
+        poster: 'https://picsum.photos/seed/picsum/200/200'
       },
       {
         title: 'The Godfather',
         releaseDate: new Date('1972-03-24'),
-        price: 11.99
+        price: 11.99,
+        poster: 'https://picsum.photos/seed/picsum/200/200'
       }
     ];
 
@@ -34,12 +36,14 @@ export class AppComponent implements OnInit {
       {
         title: 'Black Widow',
         releaseDate: new Date('2021-07-07'),
-        price: 10.99
+        price: 8.99,
+        poster: 'https://picsum.photos/seed/picsum/200/200'
       },
       {
         title: 'The Godfather II',
         releaseDate: new Date('1974-12-20'),
-        price: 11.99
+        price: 9.99,
+        poster: 'https://picsum.photos/seed/picsum/200/200'
       }
     ];
   }
