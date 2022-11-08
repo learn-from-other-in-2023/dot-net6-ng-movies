@@ -2,8 +2,17 @@
     Create Genre
 </h2>
 
-<button mat-flat-button color="primary" type="button" (click)="saveChanges()">Save Changes</button>
-&nbsp;
-<button mat-flat-button color="accent" type="button" (click)="backToHome()">
-    <mat-icon>home</mat-icon>
-</button>
+<form (submit)="saveChanges()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Name*</mat-label>
+        <input formControlName="name" matInput />
+    </mat-form-field>
+    <div class="buttons-div">
+        <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
+        <a mat-stroked-button color="warn" routerLink="/genres">Cancel</a>
+        <button mat-flat-button color="accent" type="button" (click)="backToHome()">
+            <mat-icon>home</mat-icon>
+        </button>
+    </div>
+</form>
+
