@@ -23,6 +23,7 @@ import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
 import { IndexMovieTheatersComponent } from './movie-theaters/index-movie-theaters/index-movie-theaters.component';
 import { CreateMovieTheaterComponent } from './movie-theaters/create-movie-theater/create-movie-theater.component';
 import { EditMovieTheaterComponent } from './movie-theaters/edit-movie-theater/edit-movie-theater.component';
+import { FormGenreComponent } from './genres/form-genre/form-genre.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EditMovieTheaterComponent } from './movie-theaters/edit-movie-theater/e
     EditActorComponent,
     IndexMovieTheatersComponent,
     CreateMovieTheaterComponent,
-    EditMovieTheaterComponent
+    EditMovieTheaterComponent,
+    FormGenreComponent
   ],
   imports: [
     AppRoutingModule,
