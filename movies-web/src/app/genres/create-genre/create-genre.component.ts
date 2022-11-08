@@ -9,6 +9,8 @@ import { genreCreationDTO } from '../genres.model';
 })
 export class CreateGenreComponent implements OnInit {
 
+  
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

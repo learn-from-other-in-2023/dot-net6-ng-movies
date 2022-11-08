@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { firstLetterUppercase } from 'src/app/validators/firstLetterUppercase';
 import { genreCreationDTO } from '../genres.model';
@@ -12,6 +12,9 @@ export class FormGenreComponent implements OnInit {
 
   form: FormGroup | any;
 
+  @Input()
+  model: genreCreationDTO | any;
+
   @Output()
   onSaveChanges: EventEmitter<genreCreationDTO> = new EventEmitter<genreCreationDTO>();
 
@@ -24,6 +27,10 @@ export class FormGenreComponent implements OnInit {
         validators: [Validators.required, Validators.minLength(3), firstLetterUppercase()]
       }]
     });
+
+    if (this.model !== undefined) {
+      this.form.patchValue(this.model);
+    }
 
   }
 

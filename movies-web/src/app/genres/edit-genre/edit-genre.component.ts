@@ -10,6 +10,8 @@ import { genreCreationDTO } from '../genres.model';
 })
 export class EditGenreComponent implements OnInit {
 
+  model: genreCreationDTO = {name: 'Drama'};
+  
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
