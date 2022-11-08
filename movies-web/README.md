@@ -18,6 +18,19 @@ ng g c utilities/rating
 ng g c demos/lifecycletest
 
 ng g c home
+
+ng g c genres/edit-genre
+
+ng g c movies/create-movie
+ng g c movies/edit-movie
+
+ng g c actors/index-actors
+ng g c actors/create-actor
+ng g c actors/edit-actor
+
+ng g c movie-theaters/index-movie-theaters
+ng g c movie-theaters/create-movie-theater
+ng g c movie-theaters/edit-movie-theater
 ```
 
 ## Styles

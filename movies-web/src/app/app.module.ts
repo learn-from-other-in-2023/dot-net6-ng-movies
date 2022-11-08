@@ -14,6 +14,15 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
 import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
+import { EditGenreComponent } from './genres/edit-genre/edit-genre.component';
+import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
+import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
+import { IndexActorsComponent } from './actors/index-actors/index-actors.component';
+import { CreateActorComponent } from './actors/create-actor/create-actor.component';
+import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
+import { IndexMovieTheatersComponent } from './movie-theaters/index-movie-theaters/index-movie-theaters.component';
+import { CreateMovieTheaterComponent } from './movie-theaters/create-movie-theater/create-movie-theater.component';
+import { EditMovieTheaterComponent } from './movie-theaters/edit-movie-theater/edit-movie-theater.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +34,16 @@ import { CreateGenreComponent } from './genres/create-genre/create-genre.compone
     LifecycletestComponent,
     HomeComponent,
     IndexGenresComponent,
-    CreateGenreComponent
+    CreateGenreComponent,
+    EditGenreComponent,
+    CreateMovieComponent,
+    EditMovieComponent,
+    IndexActorsComponent,
+    CreateActorComponent,
+    EditActorComponent,
+    IndexMovieTheatersComponent,
+    CreateMovieTheaterComponent,
+    EditMovieTheaterComponent
   ],
   imports: [
     AppRoutingModule,
