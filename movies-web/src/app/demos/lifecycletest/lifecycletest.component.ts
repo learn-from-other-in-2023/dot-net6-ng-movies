@@ -36,7 +36,7 @@ export class LifecycletestComponent implements OnInit, OnDestroy, DoCheck
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(`ngOnChanges ...`, changes);
+    console.log(`ngOnChanges ... `, changes);
   }
 
   ngDoCheck(): void {

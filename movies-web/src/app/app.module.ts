@@ -11,6 +11,9 @@ import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilities/rating/rating.component';
 import { LifecycletestComponent } from './demos/lifecycletest/lifecycletest.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
+import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     GenericListComponent,
     MenuComponent,
     RatingComponent,
-    LifecycletestComponent
+    LifecycletestComponent,
+    HomeComponent,
+    IndexGenresComponent,
+    CreateGenreComponent
   ],
   imports: [
     AppRoutingModule,
