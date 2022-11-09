@@ -34,6 +34,7 @@ ng g c movie-theaters/create-movie-theater
 ng g c movie-theaters/edit-movie-theater
 
 ng g c movies/movie-filter
+ng g c actors/form-actor
 ```
 
 ## Styles
