@@ -32,7 +32,10 @@ export class MovieFilterComponent implements OnInit {
 
     this.form.valueChanges
       .subscribe((values: any) => {
+        console.log('Values: ', values);
+
         this.movies = this.originalMovies;
+
         this.filterMovies(values);
       });
 
