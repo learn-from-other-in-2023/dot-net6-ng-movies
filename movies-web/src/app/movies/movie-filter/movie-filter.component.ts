@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-movie-filter',
   templateUrl: './movie-filter.component.html',
-  styleUrls: ['./movie-filter.component.css']
+  styleUrls: ['./movie-filter.component.scss']
 })
 export class MovieFilterComponent implements OnInit {
 
@@ -15,9 +15,9 @@ export class MovieFilterComponent implements OnInit {
   genres = [{ id: 1, name: 'Drama' }, { id: 2, name: 'Action' }];
 
   movies = [
-    { title: 'Spider-Man', poster: 'https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg' },
-    { title: 'Moana', poster: 'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_UX182_CR0,0,182,268_AL_.jpg' },
-    { title: 'Inception', poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg' }
+    { title: 'Spider-Man', poster: 'https://picsum.photos/200/200?grayscale' },
+    { title: 'Moana', poster: 'https://picsum.photos/200/201?grayscale' },
+    { title: 'Inception', poster: 'https://picsum.photos/201/200?grayscale' }
   ];
 
   originalMovies = this.movies;
