@@ -33,6 +33,7 @@ ng g c movie-theaters/index-movie-theaters
 ng g c movie-theaters/create-movie-theater
 ng g c movie-theaters/edit-movie-theater
 
+ng g c movies/movie-filter
 ```
 
 ## Styles
