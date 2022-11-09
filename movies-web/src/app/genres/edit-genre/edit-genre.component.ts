@@ -10,7 +10,7 @@ import { IGenreCreationDto } from '../genres.model';
 })
 export class EditGenreComponent implements OnInit {
 
-  model: IGenreCreationDto = {name: 'Drama'};
+  genreCreationDto: IGenreCreationDto = {name: 'Drama'};
   
   constructor(private activatedRoute: ActivatedRoute) { }
 

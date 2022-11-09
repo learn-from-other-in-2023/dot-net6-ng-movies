@@ -13,7 +13,7 @@ export class FormGenreComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
-  model: IGenreCreationDto | any;
+  genreCreationDto: IGenreCreationDto | any;
 
   @Output()
   onSaveChanges: EventEmitter<IGenreCreationDto> = new EventEmitter<IGenreCreationDto>();
@@ -28,8 +28,8 @@ export class FormGenreComponent implements OnInit {
       }]
     });
 
-    if (this.model !== undefined) {
-      this.form.patchValue(this.model);
+    if (this.genreCreationDto !== undefined) {
+      this.form.patchValue(this.genreCreationDto);
     }
 
   }
