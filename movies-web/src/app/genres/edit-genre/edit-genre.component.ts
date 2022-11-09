@@ -10,8 +10,8 @@ import { IGenreCreationDto } from '../genres.model';
 })
 export class EditGenreComponent implements OnInit {
 
-  genreCreationDto: IGenreCreationDto = {name: 'Drama'};
-  
+  genreCreationDto: IGenreCreationDto = { name: 'Drama' };
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -20,6 +20,8 @@ export class EditGenreComponent implements OnInit {
     });
   }
 
-  saveChanges(editGenreDto: IGenreCreationDto){
+  saveChanges(editGenreDto: IGenreCreationDto) {
+    console.log(editGenreDto);
   }
+
 }

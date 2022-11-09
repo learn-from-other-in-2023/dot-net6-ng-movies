@@ -16,7 +16,7 @@ export class FormGenreComponent implements OnInit {
   genreCreationDto: IGenreCreationDto | any;
 
   @Output()
-  onSaveChanges: EventEmitter<IGenreCreationDto> = new EventEmitter<IGenreCreationDto>();
+  onSaveChangesEvent: EventEmitter<IGenreCreationDto> = new EventEmitter<IGenreCreationDto>();
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -36,7 +36,7 @@ export class FormGenreComponent implements OnInit {
 
   saveChanges() {
     // ... save the genre
-    this.onSaveChanges.emit(this.form.value);
+    this.onSaveChangesEvent.emit(this.form.value);
   }
 
   getErrorMessageFieldName() {
