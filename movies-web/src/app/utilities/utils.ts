@@ -4,5 +4,5 @@ export function toBase64(file: File) {
         reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
         reader.onerror = (error) => reject(error);
-    })
+    });
 }
