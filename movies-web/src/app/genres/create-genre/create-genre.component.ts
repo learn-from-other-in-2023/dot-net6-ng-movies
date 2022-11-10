@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { genreCreationDTO } from '../genres.model';
+import { IGenreCreationDto } from '../genres.model';
 
 @Component({
   selector: 'app-create-genre',
@@ -9,14 +9,12 @@ import { genreCreationDTO } from '../genres.model';
 })
 export class CreateGenreComponent implements OnInit {
 
-  
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  saveChanges(createGenreDto: genreCreationDTO) {
+  saveChanges(createGenreDto: IGenreCreationDto) {
     // ... save the genre
     console.log(createGenreDto);
 

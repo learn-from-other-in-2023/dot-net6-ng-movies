@@ -24,6 +24,8 @@ import { IndexMovieTheatersComponent } from './movie-theaters/index-movie-theate
 import { CreateMovieTheaterComponent } from './movie-theaters/create-movie-theater/create-movie-theater.component';
 import { EditMovieTheaterComponent } from './movie-theaters/edit-movie-theater/edit-movie-theater.component';
 import { FormGenreComponent } from './genres/form-genre/form-genre.component';
+import { MovieFilterComponent } from './movies/movie-filter/movie-filter.component';
+import { FormActorComponent } from './actors/form-actor/form-actor.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { FormGenreComponent } from './genres/form-genre/form-genre.component';
     IndexMovieTheatersComponent,
     CreateMovieTheaterComponent,
     EditMovieTheaterComponent,
-    FormGenreComponent
+    FormGenreComponent,
+    MovieFilterComponent,
+    FormActorComponent
   ],
   imports: [
     AppRoutingModule,

@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
         title: 'The Godfather',
         releaseDate: new Date('1972-03-24'),
         price: 11.99,
-        poster: 'https://picsum.photos/seed/picsum/200/200'
+        poster: 'https://picsum.photos/200/201?grayscale'
       }
     ];
 
@@ -34,13 +34,13 @@ export class HomeComponent implements OnInit {
         title: 'Black Widow',
         releaseDate: new Date('2021-07-07'),
         price: 8.99,
-        poster: 'https://picsum.photos/200/200?grayscale'
+        poster: 'https://picsum.photos/201/200?grayscale'
       },
       {
         title: 'The Godfather II',
         releaseDate: new Date('1974-12-20'),
         price: 9.99,
-        poster: 'https://picsum.photos/seed/picsum/200/200'
+        poster: 'https://picsum.photos/201/201?grayscale'
       }
     ];
 
