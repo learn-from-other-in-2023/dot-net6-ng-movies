@@ -35,6 +35,8 @@ ng g c movie-theaters/edit-movie-theater
 
 ng g c movies/movie-filter
 ng g c actors/form-actor
+
+ng g c utilities/input-img
 ```
 
 ## Styles
