@@ -14,10 +14,10 @@ export class FormActorComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
-  model: IActorCreationDto | any;
+  actorCreationDto: IActorCreationDto | any;
 
   @Output()
-  onSaveChanges = new EventEmitter<IActorCreationDto>();
+  onSaveChangesEvent = new EventEmitter<IActorCreationDto>();
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -29,8 +29,8 @@ export class FormActorComponent implements OnInit {
       biography: ''
     });
 
-    if (this.model !== undefined) {
-      this.form.patchValue(this.model);
+    if (this.actorCreationDto !== undefined) {
+      this.form.patchValue(this.actorCreationDto);
     }
   }
 
@@ -43,7 +43,7 @@ export class FormActorComponent implements OnInit {
   }
 
   saveChanges() {
-    this.onSaveChanges.emit(this.form.value);
+    this.onSaveChangesEvent.emit(this.form.value);
   }
 
 }
