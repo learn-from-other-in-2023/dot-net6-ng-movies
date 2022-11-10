@@ -23,9 +23,12 @@ export class InputImgComponent implements OnInit {
 
   change(event: any) {
     if (event.target.files.length > 0) {
-      const file: File = event.target.files[0];
-      fileToBase64(file).then((value: string | any) => this.imageBase64 = value);
-      this.onImageSelectedEvent.emit(file);
+      const imageFile: File = event.target.files[0];
+
+      fileToBase64(imageFile).then((value: string | any) => this.imageBase64 = value);
+
+      this.onImageSelectedEvent.emit(imageFile);
+
       this.urlCurrentImage = null;
     }
   }
