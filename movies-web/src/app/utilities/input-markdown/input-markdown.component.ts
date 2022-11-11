@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class InputMarkdownComponent implements OnInit {
 
   @Input()
-  markdownContent = '';
+  markdownInputContent = '';
 
   @Output()
   changeMarkdownEvent = new EventEmitter<string | any>();

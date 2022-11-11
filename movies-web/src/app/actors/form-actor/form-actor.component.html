@@ -19,7 +19,8 @@
 
     <h4>Biography</h4>
 
-    <app-input-markdown [markdownContent]="actorCreationDto?.biography" (changeMarkdownEvent)="changeMarkdown($event)">
+    <app-input-markdown [markdownInputContent]="actorCreationDto?.biography"
+        (changeMarkdownEvent)="changeMarkdown($event)">
     </app-input-markdown>
 
     <div>
