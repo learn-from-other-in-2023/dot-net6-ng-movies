@@ -17,7 +17,7 @@ export class MovieTheaterFormComponent implements OnInit {
   model: IMovieTheatersDto | any;
 
   @Output()
-  onSaveChanges = new EventEmitter<IMovieTheatersCreationDto>();
+  onSaveChangesEvent = new EventEmitter<IMovieTheatersCreationDto>();
 
   // initialCoordinates: coordinatesMap[] = [];
 
@@ -26,10 +26,10 @@ export class MovieTheaterFormComponent implements OnInit {
       name: ['', {
         validators: [Validators.required]
       }],
-      longitude: ['', {
+      longitude: ['1', {
         validators: [Validators.required]
       }],
-      latitude: ['', {
+      latitude: ['1', {
         validators: [Validators.required]
       }]
     })
@@ -46,7 +46,7 @@ export class MovieTheaterFormComponent implements OnInit {
   // }
 
   saveChanges() {
-    this.onSaveChanges.emit(this.form.value);
+    this.onSaveChangesEvent.emit(this.form.value);
   }
 
 }
