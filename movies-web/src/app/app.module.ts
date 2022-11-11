@@ -29,6 +29,7 @@ import { MovieFilterComponent } from './movies/movie-filter/movie-filter.compone
 import { FormActorComponent } from './actors/form-actor/form-actor.component';
 import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
+import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/movie-theater-form.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { InputMarkdownComponent } from './utilities/input-markdown/input-markdow
     MovieFilterComponent,
     FormActorComponent,
     InputImgComponent,
-    InputMarkdownComponent
+    InputMarkdownComponent,
+    MovieTheaterFormComponent
   ],
   imports: [
     AppRoutingModule,

@@ -41,6 +41,8 @@ ng g c utilities/input-img
 npm i ngx-markdown
 
 ng g c utilities/input-markdown
+
+ng g c movie-theaters/movie-theater-form
 ```
 
 ## Styles
