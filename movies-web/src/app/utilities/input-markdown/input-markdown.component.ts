@@ -11,7 +11,7 @@ export class InputMarkdownComponent implements OnInit {
   markdownContent = '';
 
   @Output()
-  changeMarkdown = new EventEmitter<string | any>();
+  changeMarkdownEvent = new EventEmitter<string | any>();
 
   constructor() { }
 

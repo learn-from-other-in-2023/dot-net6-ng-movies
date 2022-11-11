@@ -12,7 +12,7 @@ export class EditActorComponent implements OnInit {
   actionDto: IActorDto = {
     name: 'Tom Holland',
     dateOfBirth: new Date(),
-    biography: 'default value',
+    biography: '# Default Value',
     picture: 'https://picsum.photos/200/200?grayscale'
   }
 
