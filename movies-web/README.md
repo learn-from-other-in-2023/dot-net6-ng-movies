@@ -43,6 +43,12 @@ npm i ngx-markdown
 ng g c utilities/input-markdown
 
 ng g c movie-theaters/movie-theater-form
+
+npm install leaflet
+npm install @asymmetrik/ngx-leaflet
+npm install --save-dev @types/leaflet
+
+ng g c utilities/map
 ```
 
 ## Styles

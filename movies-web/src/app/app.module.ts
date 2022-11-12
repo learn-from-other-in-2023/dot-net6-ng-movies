@@ -30,6 +30,8 @@ import { FormActorComponent } from './actors/form-actor/form-actor.component';
 import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/movie-theater-form.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './utilities/map/map.component'
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/m
     FormActorComponent,
     InputImgComponent,
     InputMarkdownComponent,
-    MovieTheaterFormComponent
+    MovieTheaterFormComponent,
+    MapComponent
   ],
   imports: [
     AppRoutingModule,
@@ -65,6 +68,7 @@ import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/m
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    LeafletModule,
     MarkdownModule.forRoot()
   ],
   providers: [],
