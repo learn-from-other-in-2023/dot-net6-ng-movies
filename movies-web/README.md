@@ -37,6 +37,12 @@ ng g c movies/movie-filter
 ng g c actors/form-actor
 
 ng g c utilities/input-img
+
+npm i ngx-markdown
+
+ng g c utilities/input-markdown
+
+ng g c movie-theaters/movie-theater-form
 ```
 
 ## Styles
