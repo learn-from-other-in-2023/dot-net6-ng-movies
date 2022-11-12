@@ -14,7 +14,7 @@ export class MovieTheaterFormComponent implements OnInit {
   form: FormGroup | any;
 
   @Input()
-  model: IMovieTheatersDto | any;
+  movieTheatersDto: IMovieTheatersDto | any;
 
   @Output()
   onSaveChangesEvent = new EventEmitter<IMovieTheatersCreationDto>();
@@ -34,8 +34,8 @@ export class MovieTheaterFormComponent implements OnInit {
       }]
     })
 
-    if (this.model !== undefined) {
-      this.form.patchValue(this.model);
+    if (this.movieTheatersDto !== undefined) {
+      this.form.patchValue(this.movieTheatersDto);
 
       // this.initialCoordinates.push({ latitude: this.model.latitude, longitude: this.model.longitude });
     }
