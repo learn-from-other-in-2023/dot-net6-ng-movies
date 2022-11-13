@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { marker, tileLayer, latLng, Marker, LeafletMouseEvent } from 'leaflet';
+import { marker, tileLayer, latLng, Marker, LeafletMouseEvent, icon } from 'leaflet';
 import { ICoordinatesMap } from './coordinate';
-import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -16,8 +15,8 @@ export class MapComponent implements OnInit {
   @Output()
   onSelectedLocation = new EventEmitter<ICoordinatesMap>();
 
-  icon = {
-    icon: L.icon({
+  defaultIcon = {
+    icon: icon({
       iconSize: [25, 41],
       iconAnchor: [13, 0],
       iconRetinaUrl: 'assets/marker-icon-2x.png',
@@ -31,7 +30,9 @@ export class MapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.layers = this.initialCoordinates.map(value => marker([value.latitude, value.longitude], this.icon));
+    
+    console.log(this.initialCoordinates);
+    this.layers = this.initialCoordinates.map(value => marker([value.latitude, value.longitude], this.defaultIcon));
   }
 
   mapComponentOptions = {
@@ -42,7 +43,7 @@ export class MapComponent implements OnInit {
       })
     ],
     zoom: 14,
-    center: latLng(18.473564631048617, -69.93999481201173)
+    center: latLng(17.38714, 78.491684)
   };
 
   handleMapClick(event: LeafletMouseEvent) {
@@ -51,7 +52,7 @@ export class MapComponent implements OnInit {
     console.log({ latitude, longitude });
 
     this.layers = [];
-    this.layers.push(marker([latitude, longitude], this.icon));
+    this.layers.push(marker([latitude, longitude], this.defaultIcon));
 
     this.onSelectedLocation.emit({ latitude, longitude });
   }
