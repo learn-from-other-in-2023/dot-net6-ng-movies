@@ -13,7 +13,7 @@ export class MapComponent implements OnInit {
   initialCoordinates: ICoordinatesMap[] = [];
 
   @Output()
-  onSelectedLocation = new EventEmitter<ICoordinatesMap>();
+  onSelectedLocationEvent = new EventEmitter<ICoordinatesMap>();
 
   defaultIcon = {
     icon: icon({
@@ -54,7 +54,7 @@ export class MapComponent implements OnInit {
     this.layers = [];
     this.layers.push(this.getMarker(latitude, longitude));
 
-    this.onSelectedLocation.emit({ latitude, longitude });
+    this.onSelectedLocationEvent.emit({ latitude, longitude });
   }
 
   getMarker(latitude: number, longitude: number): Marker | any {
