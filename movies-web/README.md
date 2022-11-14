@@ -51,6 +51,9 @@ npm install --save-dev @types/leaflet
 ng g c utilities/map
 
 ng g c movies/form-movie
+
+ng g c utilities/multiple-selector
+
 ```
 
 ## Styles

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IMultipleSelectorModel } from 'src/app/utilities/multiple-selector/multiple-selector.model';
 import { IMovieCreationDto, IMovieDto } from '../movies.model';
 
 @Component({
@@ -17,27 +18,27 @@ export class FormMovieComponent implements OnInit {
   model: IMovieDto | any;
 
   @Output()
-  onSaveChanges = new EventEmitter<IMovieCreationDto>();
+  onMovieSaveChangesEvent = new EventEmitter<IMovieCreationDto>();
 
-  // nonSelectedGenres: multipleSelectorModel[] = [
-  //   {key: 1, value: 'Drama'},
-  //   {key: 2, value: 'Action'},
-  //   {key: 3, value: 'Comedy'},
-  // ];
+  nonSelectedGenres: IMultipleSelectorModel[] = [
+    { key: 1, value: 'Drama' },
+    { key: 2, value: 'Action' },
+    { key: 3, value: 'Comedy' },
+  ];
 
-  // selectedGenres: multipleSelectorModel[] = [];
+  selectedGenres: IMultipleSelectorModel[] = [];
 
-  // nonSelectedMovieTheaters: multipleSelectorModel[] = [
-  //   {key: 1, value: 'Agora'},
-  //   {key: 2, value: 'Sambil'},
-  //   {key: 3, value: 'Megacentro'},
-  // ]
+  nonSelectedMovieTheaters: IMultipleSelectorModel[] = [
+    { key: 1, value: 'Agora' },
+    { key: 2, value: 'Sambil' },
+    { key: 3, value: 'Megacentro' },
+  ]
 
-  // selectedMovieTheaters: multipleSelectorModel[] = [];
+  selectedMovieTheaters: IMultipleSelectorModel[] = [];
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      title: ['',{
+      title: ['', {
         validators: [Validators.required]
       }],
       summary: '',
@@ -49,27 +50,27 @@ export class FormMovieComponent implements OnInit {
       movieTheatersIds: ''
     });
 
-    if (this.model !== undefined){
+    if (this.model !== undefined) {
       this.form.patchValue(this.model);
     }
   }
 
-  onImageSelected(file: File){
+  onImageSelected(file: File) {
     this.form.get('poster').setValue(file);
   }
 
-  changeMarkdown(content: string){
+  changeMarkdown(content: string) {
     this.form.get('summary').setValue(content);
   }
 
-  saveChanges(){
-    // const genresIds = this.selectedGenres.map(value => value.key);
-    // this.form.get('genresIds').setValue(genresIds);
+  saveChanges() {
+    const genresIds = this.selectedGenres.map(value => value.key);
+    this.form.get('genresIds').setValue(genresIds);
 
-    // const movieTheatersIds = this.selectedMovieTheaters.map(value => value.key);
-    // this.form.get('movieTheatersIds').setValue(movieTheatersIds);
+    const movieTheatersIds = this.selectedMovieTheaters.map(value => value.key);
+    this.form.get('movieTheatersIds').setValue(movieTheatersIds);
 
-    this.onSaveChanges.emit(this.form.value);
+    this.onMovieSaveChangesEvent.emit(this.form.value);
   }
 
 }
