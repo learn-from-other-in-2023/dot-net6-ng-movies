@@ -4,8 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
+
+// Need to speak to Robbie about this
 // import "leaflet/dist/images/marker-shadow.png";
 // import "leaflet/dist/images/marker-icon.png";
+// require("leaflet/dist/images/marker-shadow.png");
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

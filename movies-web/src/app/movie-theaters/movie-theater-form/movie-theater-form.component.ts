@@ -27,10 +27,10 @@ export class MovieTheaterFormComponent implements OnInit {
       name: ['', {
         validators: [Validators.required]
       }],
-      longitude: ['78.491684', {
+      longitude: ['', {
         validators: [Validators.required]
       }],
-      latitude: ['17.387140', {
+      latitude: ['', {
         validators: [Validators.required]
       }]
     })
