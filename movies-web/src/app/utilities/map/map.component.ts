@@ -32,7 +32,10 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.initialCoordinates);
 
-    this.layers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
+    if (this.initialCoordinates.length > 0 && this.initialCoordinates[0].latitude !== undefined && this.initialCoordinates[0].longitude !== undefined) {
+      this.layers.push(this.getMarker(this.initialCoordinates[0].latitude, this.initialCoordinates[0].longitude));
+    }
+    // this.layers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
   }
 
   mapComponentOptions = {
@@ -58,6 +61,11 @@ export class MapComponent implements OnInit {
   }
 
   getMarker(latitude: number, longitude: number): Marker | any {
+
+    if (latitude === undefined || longitude === undefined) {
+      return;
+    }
+
     return marker([latitude, longitude], this.defaultIcon);
   }
 

@@ -1,3 +1,4 @@
 <h2>Create Movie Theater</h2>
 
-<app-movie-theater-form (onSaveChangesEvent)="saveChanges($event)"></app-movie-theater-form>
+<app-movie-theater-form [movieTheatersDto]="movieTheatersDto" (onSaveChangesEvent)="saveChanges($event)">
+</app-movie-theater-form>

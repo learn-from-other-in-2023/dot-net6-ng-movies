@@ -9,7 +9,7 @@ import { IMovieTheatersCreationDto, IMovieTheatersDto } from '../movie-theaters.
 })
 export class EditMovieTheaterComponent implements OnInit {
 
-  movieTheatersDto: IMovieTheatersDto = { name: 'Agora', latitude: 18.483541251864438, longitude: -69.93927597999574 };
+  movieTheatersDto: IMovieTheatersDto = { name: 'Cine Polis', latitude: 17.387140, longitude: 78.491684 };
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

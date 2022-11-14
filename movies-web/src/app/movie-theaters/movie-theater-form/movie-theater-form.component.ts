@@ -35,12 +35,10 @@ export class MovieTheaterFormComponent implements OnInit {
       }]
     })
 
-    this.initialCoordinates.push({ latitude: 17.387140, longitude: 78.491684 });
-
     if (this.movieTheatersDto !== undefined) {
       this.form.patchValue(this.movieTheatersDto);
 
-      this.initialCoordinates.push({ latitude: this.form.latitude, longitude: this.form.longitude });
+      this.initialCoordinates.push({ latitude: this.movieTheatersDto.latitude, longitude: this.movieTheatersDto.longitude });
     }
   }
 

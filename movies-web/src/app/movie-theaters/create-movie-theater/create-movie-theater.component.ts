@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMovieTheatersCreationDto } from '../movie-theaters.model';
+import { IMovieTheatersCreationDto, IMovieTheatersDto } from '../movie-theaters.model';
 
 @Component({
   selector: 'app-create-movie-theater',
@@ -7,6 +7,8 @@ import { IMovieTheatersCreationDto } from '../movie-theaters.model';
   styleUrls: ['./create-movie-theater.component.scss']
 })
 export class CreateMovieTheaterComponent implements OnInit {
+
+  movieTheatersDto: IMovieTheatersDto = { name: 'Cine Polis', latitude: 17.387140, longitude: 78.491684 };
 
   constructor() { }
 
