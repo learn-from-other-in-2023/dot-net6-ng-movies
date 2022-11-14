@@ -25,17 +25,14 @@ export class MapComponent implements OnInit {
     })
   };
 
-  layers: Marker<any>[] = [];
+  markerLayers: Marker<any>[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.initialCoordinates);
 
-    if (this.initialCoordinates.length > 0 && this.initialCoordinates[0].latitude !== undefined && this.initialCoordinates[0].longitude !== undefined) {
-      this.layers.push(this.getMarker(this.initialCoordinates[0].latitude, this.initialCoordinates[0].longitude));
-    }
-    // this.layers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
+    this.markerLayers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
   }
 
   mapComponentOptions = {
@@ -54,8 +51,8 @@ export class MapComponent implements OnInit {
     const longitude = event.latlng.lng;
     console.log({ latitude, longitude });
 
-    this.layers = [];
-    this.layers.push(this.getMarker(latitude, longitude));
+    this.markerLayers = [];
+    this.markerLayers.push(this.getMarker(latitude, longitude));
 
     this.onSelectedLocationEvent.emit({ latitude, longitude });
   }
