@@ -23,7 +23,7 @@ namespace Movies.API.Services
             logger.LogInformation("Executing GetAllGenres");
 
             await Task.Delay(1);
-            
+
             return _genres;
         }
 
