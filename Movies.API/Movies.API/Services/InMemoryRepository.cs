@@ -4,7 +4,7 @@ namespace Movies.API.Services
 {
     public class InMemoryRepository : IRepository
     {
-        private List<Genre> _genres;
+        private readonly List<Genre> _genres;
         private readonly ILogger<InMemoryRepository> logger;
 
         public InMemoryRepository(List<Genre> genres, ILogger<InMemoryRepository> logger)
