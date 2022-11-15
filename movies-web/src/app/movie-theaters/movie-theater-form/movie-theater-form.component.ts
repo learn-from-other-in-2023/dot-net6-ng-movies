@@ -27,20 +27,18 @@ export class MovieTheaterFormComponent implements OnInit {
       name: ['', {
         validators: [Validators.required]
       }],
-      longitude: ['78.491684', {
+      longitude: ['', {
         validators: [Validators.required]
       }],
-      latitude: ['17.387140', {
+      latitude: ['', {
         validators: [Validators.required]
       }]
     })
 
-    this.initialCoordinates.push({ latitude: 17.387140, longitude: 78.491684 });
-
     if (this.movieTheatersDto !== undefined) {
       this.form.patchValue(this.movieTheatersDto);
 
-      this.initialCoordinates.push({ latitude: this.form.latitude, longitude: this.form.longitude });
+      this.initialCoordinates.push({ latitude: this.movieTheatersDto.latitude, longitude: this.movieTheatersDto.longitude });
     }
   }
 

@@ -13,7 +13,7 @@ export class MapComponent implements OnInit {
   initialCoordinates: ICoordinatesMap[] = [];
 
   @Output()
-  onSelectedLocation = new EventEmitter<ICoordinatesMap>();
+  onSelectedLocationEvent = new EventEmitter<ICoordinatesMap>();
 
   defaultIcon = {
     icon: icon({
@@ -25,14 +25,14 @@ export class MapComponent implements OnInit {
     })
   };
 
-  layers: Marker<any>[] = [];
+  markerLayers: Marker<any>[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    
     console.log(this.initialCoordinates);
-    this.layers = this.initialCoordinates.map(value => marker([value.latitude, value.longitude], this.defaultIcon));
+
+    this.markerLayers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
   }
 
   mapComponentOptions = {
@@ -51,10 +51,19 @@ export class MapComponent implements OnInit {
     const longitude = event.latlng.lng;
     console.log({ latitude, longitude });
 
-    this.layers = [];
-    this.layers.push(marker([latitude, longitude], this.defaultIcon));
+    this.markerLayers = [];
+    this.markerLayers.push(this.getMarker(latitude, longitude));
 
-    this.onSelectedLocation.emit({ latitude, longitude });
+    this.onSelectedLocationEvent.emit({ latitude, longitude });
+  }
+
+  getMarker(latitude: number, longitude: number): Marker | any {
+
+    if (latitude === undefined || longitude === undefined) {
+      return;
+    }
+
+    return marker([latitude, longitude], this.defaultIcon);
   }
 
 }

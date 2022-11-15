@@ -4,8 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
+
+// Need to speak to Robbie about this
 // import "leaflet/dist/images/marker-shadow.png";
 // import "leaflet/dist/images/marker-icon.png";
+// require("leaflet/dist/images/marker-shadow.png");
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +36,9 @@ import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/movie-theater-form.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { MapComponent } from './utilities/map/map.component'
+import { MapComponent } from './utilities/map/map.component';
+import { FormMovieComponent } from './movies/form-movie/form-movie.component';
+import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component'
 
 @NgModule({
   declarations: [
@@ -61,7 +66,9 @@ import { MapComponent } from './utilities/map/map.component'
     InputImgComponent,
     InputMarkdownComponent,
     MovieTheaterFormComponent,
-    MapComponent
+    MapComponent,
+    FormMovieComponent,
+    MultipleSelectorComponent
   ],
   imports: [
     AppRoutingModule,
