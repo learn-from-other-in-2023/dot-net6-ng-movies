@@ -54,6 +54,7 @@ ng g c movies/form-movie
 
 ng g c utilities/multiple-selector
 
+ng g c actors/actors-autocomplete
 ```
 
 ## Styles
