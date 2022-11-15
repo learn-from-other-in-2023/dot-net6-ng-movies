@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 // Need to speak to Robbie about this
 // import "leaflet/dist/images/marker-shadow.png";
@@ -35,10 +36,10 @@ import { FormActorComponent } from './actors/form-actor/form-actor.component';
 import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/movie-theater-form.component';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './utilities/map/map.component';
 import { FormMovieComponent } from './movies/form-movie/form-movie.component';
-import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component'
+import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
+import { ActorsAutocompleteComponent } from './actors/actors-autocomplete/actors-autocomplete.component'
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { MultipleSelectorComponent } from './utilities/multiple-selector/multipl
     MovieTheaterFormComponent,
     MapComponent,
     FormMovieComponent,
-    MultipleSelectorComponent
+    MultipleSelectorComponent,
+    ActorsAutocompleteComponent
   ],
   imports: [
     AppRoutingModule,
