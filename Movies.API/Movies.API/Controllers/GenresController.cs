@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Movies.API.Entities;
-using Movies.API.Filters;
-using Movies.API.Services;
 
 namespace Movies.API.Controllers
 {
