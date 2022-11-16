@@ -30,7 +30,9 @@ namespace Movies.API.Controllers
         {
             _logger.LogInformation("Getting all the genres");
 
-            var genres = await _applicationDbContext.Genres.ToListAsync();
+            var genres = await _applicationDbContext.Genres
+                                                    .OrderBy(x => x.Name)
+                                                    .ToListAsync();
 
             return _mapper.Map<List<GenreDto>>(genres);
         }
