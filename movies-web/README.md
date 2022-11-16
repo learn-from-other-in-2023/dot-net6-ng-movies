@@ -57,6 +57,8 @@ ng g c utilities/multiple-selector
 ng g c actors/actors-autocomplete
 
 ng g s genres/genres
+
+ng g c utilities/display-errors
 ```
 
 ## Styles
