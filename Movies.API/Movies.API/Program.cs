@@ -4,6 +4,18 @@ using Movies.API.Filters;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var frontendURL = builder.Configuration.GetValue<string>("frontend_url");
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins(frontendURL)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders(new string[] { "totalAmountOfRecords" });
+    });
+});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
 builder.Services.AddControllers(options =>
@@ -25,6 +37,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthentication();
 

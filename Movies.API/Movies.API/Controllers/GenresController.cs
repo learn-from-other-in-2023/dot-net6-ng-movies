@@ -19,7 +19,11 @@ namespace Movies.API.Controllers
         {
             _logger.LogInformation("Getting all the genres");
 
-            var output = new List<Genre> { new Genre { Id = 1, Name = "Comedy" } };
+            var output = new List<Genre> {
+                new Genre { Id = 1, Name = "Comedy" },
+                new Genre { Id = 2, Name = "Action" },
+                new Genre { Id = 3, Name = "Drama" }
+            };
 
             return await Task.FromResult(output);
         }
