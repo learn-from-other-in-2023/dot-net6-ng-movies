@@ -77,9 +77,9 @@ namespace Movies.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> Delete(int Id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == Id);
+            var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == id);
 
             if (genre == null)
             {

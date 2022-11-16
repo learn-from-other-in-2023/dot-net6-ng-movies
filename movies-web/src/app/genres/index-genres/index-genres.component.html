@@ -16,7 +16,7 @@
                     <a routerLink="/genres/edit/{{element.id}}" mat-flat-button color="accent">
                         Edit
                     </a>
-                    <button mat-flat-button color="warn" (confirm)="delete(element.id)">
+                    <button mat-flat-button color="warn" (click)="delete(element.id)">
                         Delete
                     </button>
                     <!-- <button mat-flat-button color="warn" [swal]="{
