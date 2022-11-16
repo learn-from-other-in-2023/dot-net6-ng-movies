@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Movies.API.Entities;
+using Movies.API.Persistance;
 
 namespace Movies.API.Controllers
 {
@@ -8,10 +10,13 @@ namespace Movies.API.Controllers
     public class GenresController : ControllerBase
     {
         private readonly ILogger<GenresController> _logger;
+        private readonly ApplicationDbContext _applicationDbContext;
 
-        public GenresController(ILogger<GenresController> logger)
+        public GenresController(ILogger<GenresController> logger, ApplicationDbContext applicationDbContext)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+            _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
         }
 
         [HttpGet] // api/genres
@@ -19,13 +24,7 @@ namespace Movies.API.Controllers
         {
             _logger.LogInformation("Getting all the genres");
 
-            var output = new List<Genre> {
-                new Genre { Id = 1, Name = "Comedy" },
-                new Genre { Id = 2, Name = "Action" },
-                new Genre { Id = 3, Name = "Drama" }
-            };
-
-            return await Task.FromResult(output);
+            return await _applicationDbContext.Genres.ToListAsync();
         }
 
         [HttpGet("{Id:int}", Name = "getGenre")] // api/genres/example
@@ -35,9 +34,14 @@ namespace Movies.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Genre genre)
+        public async Task<ActionResult> Post([FromBody] Genre genre)
         {
-            throw new NotImplementedException();
+            // var genre = mapper.Map<Genre>(genreCreationDTO);
+            _applicationDbContext.Add(genre);
+
+            await _applicationDbContext.SaveChangesAsync();
+
+            return NoContent();
         }
 
         [HttpPut]
