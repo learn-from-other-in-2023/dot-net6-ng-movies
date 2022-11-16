@@ -31,7 +31,8 @@ export class EditGenreComponent implements OnInit {
   saveChanges(editGenreDto: IGenreCreationDto) {
     console.log('EditActorComponent: ', editGenreDto);
 
-    this.genresService.edit(this.genreEditDto.id, this.genreEditDto)
+    this.genresService
+      .edit(this.genreEditDto.id, editGenreDto)
       .subscribe(() => {
         this.router.navigate(["/genres"]);
       });
