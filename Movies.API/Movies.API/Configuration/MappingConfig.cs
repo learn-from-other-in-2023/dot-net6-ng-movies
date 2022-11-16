@@ -20,6 +20,8 @@ namespace Movies.API.Configuration
             var mappingConfig = new MapperConfiguration(config =>
             {
                 _ = config.CreateMap<GenreDto, Genre>().ReverseMap();
+
+                _ = config.CreateMap<GenreCreationDto, Genre>().ReverseMap();
             });
 
             return mappingConfig;
