@@ -20,9 +20,11 @@ export class IndexGenresComponent implements OnInit {
   }
 
   loadGenres() {
-    this.genresService.getAll().subscribe(genres => {
-      this.genres = genres;
-    });
+    this.genresService
+      .getAll()
+      .subscribe(genres => {
+        this.genres = genres;
+      });
   }
 
   delete(id: number) {
