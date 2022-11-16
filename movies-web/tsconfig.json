@@ -3,7 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "outDir": "./dist/movies-web",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IActor } from '../actors.model';
+import type { IActor } from '~/app/actors/actors.model';
 
 @Component({
   selector: 'app-form-actor',

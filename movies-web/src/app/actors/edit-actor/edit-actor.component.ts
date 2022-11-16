@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IActor } from '../actors.model';
+import type { IActor } from '~/app/actors/actors.model';
 
 @Component({
   selector: 'app-edit-actor',
