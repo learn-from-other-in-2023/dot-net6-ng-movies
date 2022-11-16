@@ -1,5 +1,7 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Movies.API.Configuration;
 using Movies.API.Filters;
 using Movies.API.Persistance;
 
@@ -9,10 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-var frontendURL = builder.Configuration.GetValue<string>("frontend_url");
 builder.Services.AddCors(options =>
 {
+    var frontendURL = builder.Configuration.GetValue<string>("frontend_url");
     options.AddDefaultPolicy(builder =>
     {
         builder.WithOrigins(frontendURL)
@@ -23,6 +24,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers(options =>
 {

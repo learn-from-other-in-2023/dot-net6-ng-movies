@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Movies.API.Dtos;
 using Movies.API.Entities;
 using Movies.API.Persistance;
 
@@ -21,7 +22,7 @@ namespace Movies.API.Controllers
 
         // api/genres
         [HttpGet]
-        public async Task<ActionResult<List<Genre>>> Get()
+        public async Task<ActionResult<List<GenreDto>>> Get()
         {
             _logger.LogInformation("Getting all the genres");
 
