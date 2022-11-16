@@ -1,3 +1,6 @@
 <h2>Edit Genre</h2>
 
-<app-form-genre [genreCreationDto]="genreEditDto" (onSaveChangesEvent)="saveChanges($event)"></app-form-genre>
+<app-form-genre *ngIf="genreEditDto" [genreCreationDto]="genreEditDto" (onSaveChangesEvent)="saveChanges($event)">
+</app-form-genre>
+
+<mat-spinner *ngIf="!genreEditDto"></mat-spinner>

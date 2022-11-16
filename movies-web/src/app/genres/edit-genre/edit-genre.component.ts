@@ -13,9 +13,7 @@ export class EditGenreComponent implements OnInit {
 
   genreEditDto: IGenreDto | any;
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private genresService: GenresService,
-    private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private genresService: GenresService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
