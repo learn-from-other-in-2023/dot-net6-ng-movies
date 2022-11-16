@@ -13,7 +13,6 @@ export class GenresService {
 
   constructor(private http: HttpClient) { }
 
-
   getAll(): Observable<IGenreDto[]> {
     return this.http.get<IGenreDto[]>(this.apiURL);
   }
