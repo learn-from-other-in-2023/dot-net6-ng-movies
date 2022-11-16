@@ -14,12 +14,12 @@
 
     <h4>Select Picture</h4>
 
-    <app-input-img [urlCurrentImage]="actorCreationDto?.picture" (onImageSelectedEvent)="onImageSelected($event)">
+    <app-input-img [urlCurrentImage]="actorDto?.picture" (onImageSelectedEvent)="onImageSelected($event)">
     </app-input-img>
 
     <h4>Biography</h4>
 
-    <app-input-markdown [markdownInputContent]="actorCreationDto?.biography"
+    <app-input-markdown [markdownInputContent]="actorDto?.biography ?? ''"
         (changeMarkdownEvent)="changeMarkdown($event)">
     </app-input-markdown>
 

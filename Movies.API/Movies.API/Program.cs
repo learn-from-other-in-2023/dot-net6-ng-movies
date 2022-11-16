@@ -16,7 +16,10 @@ builder.Services.AddTransient<MoviesActionFilter>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    _ = options.Filters.Add(typeof(MoviesExceptionFilter));
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

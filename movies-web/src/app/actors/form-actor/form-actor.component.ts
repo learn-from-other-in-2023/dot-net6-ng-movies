@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IActorCreationDto } from '../actors.model';
+import type { IActor } from '~/app/actors/actors.model';
 
 @Component({
   selector: 'app-form-actor',
@@ -9,17 +9,21 @@ import { IActorCreationDto } from '../actors.model';
 })
 export class FormActorComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  form: FormGroup | any;
+  form!: FormGroup;
 
   @Input()
-  actorCreationDto: IActorCreationDto | any;
+  actorDto?: IActor;
 
   @Output()
-  onSaveChangesEvent = new EventEmitter<IActorCreationDto>();
+  onSaveChangesEvent = new EventEmitter<IActor>();
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initializeActorForm();
+  }
+
+  private initializeActorForm() {
     this.form = this.formBuilder.group({
       name: ['', {
         validators: [Validators.required]
@@ -29,17 +33,29 @@ export class FormActorComponent implements OnInit {
       biography: ''
     });
 
-    if (this.actorCreationDto !== undefined) {
-      this.form.patchValue(this.actorCreationDto);
+    if (this.actorDto !== undefined) {
+      this.form.patchValue(this.actorDto);
     }
   }
 
   onImageSelected(image: any) {
-    this.form.get('picture').setValue(image);
+    const picture = this.form.get('picture');
+
+    if (!picture) {
+      return;
+    }
+
+    picture.setValue(image);
   }
 
   changeMarkdown(content: any) {
-    this.form.get('biography').setValue(content);
+    const biography = this.form.get('biography');
+
+    if (!biography) {
+      return;
+    }
+
+    biography.setValue(content);
   }
 
   saveChanges() {

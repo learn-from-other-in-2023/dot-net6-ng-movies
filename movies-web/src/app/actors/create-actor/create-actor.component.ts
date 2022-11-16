@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IActorCreationDto } from '../actors.model';
+import type { IActor } from '~/app/actors/actors.model';
 
 @Component({
   selector: 'app-create-actor',
@@ -13,7 +13,7 @@ export class CreateActorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveChanges(actorCreationDTO: IActorCreationDto) {
+  saveChanges(actorCreationDTO: IActor) {
 
     console.log(actorCreationDTO);
   }
