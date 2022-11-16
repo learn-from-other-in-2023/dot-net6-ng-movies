@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IActorCreationDto, IActorDto } from '../actors.model';
+import { IActor } from '../actors.model';
 
 @Component({
   selector: 'app-edit-actor',
@@ -9,7 +9,7 @@ import { IActorCreationDto, IActorDto } from '../actors.model';
 })
 export class EditActorComponent implements OnInit {
 
-  actionDto: IActorDto = {
+  actionDto: IActor = {
     name: 'Tom Holland',
     dateOfBirth: new Date(),
     biography: '# Default Value',
@@ -24,7 +24,7 @@ export class EditActorComponent implements OnInit {
     });
   }
 
-  saveChanges(actorCreationDTO: IActorCreationDto) {
+  saveChanges(actorCreationDTO: IActor) {
     console.log(actorCreationDTO);
   }
 

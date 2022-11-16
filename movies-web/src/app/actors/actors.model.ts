@@ -1,3 +1,5 @@
+export type IActor = IActorCreationDto | IActorDto;
+
 export interface IActorCreationDto {
     name: string;
 
