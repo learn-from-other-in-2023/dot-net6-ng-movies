@@ -28,6 +28,7 @@ export class IndexGenresComponent implements OnInit {
   }
 
   delete(id: number) {
+    console.log('IndexGenresComponent: For Delete', id);
     this.genresService.delete(id)
       .subscribe(() => {
         this.loadGenres();

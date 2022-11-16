@@ -40,7 +40,8 @@ import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/m
 import { MapComponent } from './utilities/map/map.component';
 import { FormMovieComponent } from './movies/form-movie/form-movie.component';
 import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
-import { ActorsAutocompleteComponent } from './actors/actors-autocomplete/actors-autocomplete.component'
+import { ActorsAutocompleteComponent } from './actors/actors-autocomplete/actors-autocomplete.component';
+import { DisplayErrorsComponent } from './utilities/display-errors/display-errors.component'
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ActorsAutocompleteComponent } from './actors/actors-autocomplete/actors
     MapComponent,
     FormMovieComponent,
     MultipleSelectorComponent,
-    ActorsAutocompleteComponent
+    ActorsAutocompleteComponent,
+    DisplayErrorsComponent
   ],
   imports: [
     AppRoutingModule,

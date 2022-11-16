@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IGenreCreationDto } from '../genres.model';
+import { IGenreCreationDto } from '~/app/genres//genres.model';
+import { GenresService } from '~/app/genres/genres.service';
+import { parseWebAPIErrors } from '~/app/utilities/utils';
 
 @Component({
   selector: 'app-create-genre',
@@ -9,7 +11,9 @@ import { IGenreCreationDto } from '../genres.model';
 })
 export class CreateGenreComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  errors: string[] = [];
+
+  constructor(private router: Router, private genresService: GenresService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +22,11 @@ export class CreateGenreComponent implements OnInit {
     // ... save the genre
     console.log(createGenreDto);
 
-    this.router.navigate(['/genres']);
+    this.genresService
+      .create(createGenreDto)
+      .subscribe(() => {
+        this.router.navigate(['/genres']);
+      }, error => this.errors = parseWebAPIErrors(error));
   }
 
   backToHome() {
