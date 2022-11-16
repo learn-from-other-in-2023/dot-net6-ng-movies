@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { marker, tileLayer, latLng, Marker, LeafletMouseEvent, icon } from 'leaflet';
+import { marker, tileLayer, latLng, Marker, LeafletMouseEvent, icon, Icon } from 'leaflet';
 import { ICoordinatesMap } from './coordinate';
 
 @Component({
@@ -17,8 +17,7 @@ export class MapComponent implements OnInit {
 
   defaultIcon = {
     icon: icon({
-      iconSize: [25, 41],
-      iconAnchor: [13, 0],
+      ...Icon.Default.prototype.options,
       iconRetinaUrl: 'assets/marker-icon-2x.png',
       iconUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png'
