@@ -19,7 +19,8 @@ namespace Movies.API.Controllers
             _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
         }
 
-        [HttpGet] // api/genres
+        // api/genres
+        [HttpGet]
         public async Task<ActionResult<List<Genre>>> Get()
         {
             _logger.LogInformation("Getting all the genres");
@@ -27,10 +28,17 @@ namespace Movies.API.Controllers
             return await _applicationDbContext.Genres.ToListAsync();
         }
 
-        [HttpGet("{Id:int}", Name = "getGenre")] // api/genres/example
-        public ActionResult<Genre> Get(int Id, string param2)
+        [HttpGet("{Id:int}", Name = "getGenre")]
+        public async Task<ActionResult<Genre>> Get(int Id)
         {
-            throw new NotImplementedException();
+            var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == Id);
+
+            if (genre == null)
+            {
+                return NotFound();
+            }
+
+            return genre; //mapper.Map<GenreDTO>(genre);
         }
 
         [HttpPost]
