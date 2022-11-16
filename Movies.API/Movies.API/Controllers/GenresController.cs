@@ -37,10 +37,11 @@ namespace Movies.API.Controllers
             return _mapper.Map<List<GenreDto>>(genres);
         }
 
-        [HttpGet("{Id:int}", Name = "getGenre")]
-        public async Task<ActionResult<GenreDto>> Get(int Id)
+        [HttpGet("{id:int}", Name = "getGenre")]
+        public async Task<ActionResult<GenreDto>> Get(int id)
         {
-            var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == Id);
+            var genre = await _applicationDbContext.Genres
+                                                   .FirstOrDefaultAsync(x => x.Id == id);
 
             if (genre == null)
             {
@@ -62,16 +63,34 @@ namespace Movies.API.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public ActionResult Put([FromBody] Genre genre)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(int id, [FromBody] GenreCreationDto genreCreationDto)
         {
-            throw new NotImplementedException();
+            var genre = _mapper.Map<Genre>(genreCreationDto);
+
+            genre.Id = id;
+            _applicationDbContext.Entry(genre).State = EntityState.Modified;
+
+            await _applicationDbContext.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        [HttpDelete]
-        public ActionResult Delete()
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int Id)
         {
-            throw new NotImplementedException();
+            var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == Id);
+
+            if (genre == null)
+            {
+                return NotFound();
+            }
+
+            _applicationDbContext.Remove(genre);
+
+            await _applicationDbContext.SaveChangesAsync();
+
+            return NoContent();
         }
 
     }
