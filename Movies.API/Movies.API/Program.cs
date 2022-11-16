@@ -1,18 +1,20 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Movies.API.Filters;
-using Movies.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers(options =>
+var frontendURL = builder.Configuration.GetValue<string>("frontend_url");
+builder.Services.AddCors(options =>
 {
-    options.Filters.Add(typeof(MoviesExceptionFilter));
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins(frontendURL)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders(new string[] { "totalAmountOfRecords" });
+    });
 });
-
-builder.Services.AddResponseCaching();
-builder.Services.AddSingleton<IRepository, InMemoryRepository>();
-builder.Services.AddTransient<MoviesActionFilter>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
@@ -36,7 +38,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseResponseCaching();
+app.UseCors();
 
 app.UseAuthentication();
 
@@ -45,3 +47,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+//builder.Services.AddResponseCaching();
+//builder.Services.AddSingleton<IRepository, InMemoryRepository>();
+//builder.Services.AddTransient<MoviesActionFilter>();
+
+// app.UseResponseCaching();

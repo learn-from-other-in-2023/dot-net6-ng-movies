@@ -5,6 +5,7 @@ import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import {HttpClientModule} from '@angular/common/http';
 
 // Need to speak to Robbie about this
 // import "leaflet/dist/images/marker-shadow.png";
@@ -80,6 +81,7 @@ import { ActorsAutocompleteComponent } from './actors/actors-autocomplete/actors
     ReactiveFormsModule,
     FormsModule,
     LeafletModule,
+    HttpClientModule,
     MarkdownModule.forRoot()
   ],
   providers: [],
