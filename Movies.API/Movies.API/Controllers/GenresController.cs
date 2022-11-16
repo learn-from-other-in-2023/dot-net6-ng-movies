@@ -36,7 +36,7 @@ namespace Movies.API.Controllers
         }
 
         [HttpGet("{Id:int}", Name = "getGenre")]
-        public async Task<ActionResult<Genre>> Get(int Id)
+        public async Task<ActionResult<GenreDto>> Get(int Id)
         {
             var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == Id);
 
@@ -45,7 +45,7 @@ namespace Movies.API.Controllers
                 return NotFound();
             }
 
-            return genre; //mapper.Map<GenreDTO>(genre);
+            return _mapper.Map<GenreDto>(genre);
         }
 
         [HttpPost]
