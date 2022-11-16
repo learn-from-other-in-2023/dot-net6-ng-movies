@@ -21,52 +21,37 @@ namespace Movies.API.Controllers
         {
             _logger.LogInformation("Getting all the genres");
 
-            return new List<Genre> { new Genre { Id = 1, Name = "Comedy" } };
+            var output = new List<Genre> { new Genre { Id = 1, Name = "Comedy" } };
+
+            return await Task.FromResult(output);
         }
 
         [HttpGet("{Id:int}", Name = "getGenre")] // api/genres/example
-        [ServiceFilter(typeof(MoviesActionFilter))]
         public ActionResult<Genre> Get(int Id, string param2)
         {
-            _logger.LogDebug("get by Id method executing...");
-
-            var genre = _repository.GetGenreById(Id);
-
-            if (genre == null)
-            {
-                _logger.LogWarning($"Genre with Id {Id} not found");
-                _logger.LogError("this is an error");
-                //throw new ApplicationException();
-                return NotFound();
-            }
-
-            //return Ok(2);
-            //return "felipe";
-            return genre;
+            throw new NotImplementedException();
         }
 
         [HttpPost]
         public ActionResult Post([FromBody] Genre genre)
         {
-            _repository.AddGenre(genre);
-
-            return new CreatedAtRouteResult("getGenre", new { Id = genre.Id }, genre);
+            throw new NotImplementedException();
         }
 
         [HttpPut]
         public ActionResult Put([FromBody] Genre genre)
         {
-
-            return NoContent();
+            throw new NotImplementedException();
         }
 
         [HttpDelete]
         public ActionResult Delete()
         {
-            return NoContent();
-
+            throw new NotImplementedException();
         }
+
     }
+
 }
 
 //[HttpGet("list")] // api/genres/list
