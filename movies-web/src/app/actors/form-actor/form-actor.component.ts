@@ -12,7 +12,7 @@ export class FormActorComponent implements OnInit {
   form!: FormGroup;
 
   @Input()
-  actorDto!: IActor;
+  actorDto?: IActor;
 
   @Output()
   onSaveChangesEvent = new EventEmitter<IActor>();
