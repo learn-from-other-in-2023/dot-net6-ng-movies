@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies.API.Dtos;
 using Movies.API.Entities;
+using Movies.API.Helpers;
 using Movies.API.Persistance;
 using System.Linq;
 
@@ -15,14 +16,16 @@ namespace Movies.API.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
-        //private readonly IFileStorageService fileStorageService;
-        //private readonly string containerName = "actors";
+        private readonly IFileStorageService fileStorageService;
+        private readonly string containerName = "actors";
 
-        public ActorsController(ApplicationDbContext context, IMapper mapper)
+        public ActorsController(ApplicationDbContext context, IMapper mapper, IFileStorageService fileStorageService)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
 
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+
+            this.fileStorageService = fileStorageService ?? throw new ArgumentNullException(nameof(fileStorageService));
         }
 
         [HttpGet]
@@ -53,7 +56,7 @@ namespace Movies.API.Controllers
 
             if (actorCreationDto.Picture is not null)
             {
-                // actor.Picture = await fileStorageService.SaveFile(containerName, actorCreationDto.Picture);
+                actor.Picture = await fileStorageService.SaveFile(containerName, actorCreationDto.Picture);
             }
 
             context.Add(actor);

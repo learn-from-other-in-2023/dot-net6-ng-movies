@@ -1,10 +1,11 @@
 ﻿using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 namespace Movies.API.Helpers
 {
     public class AzureStorageService : IFileStorageService
     {
-        private string connectionString;
+        private readonly string connectionString;
 
         public AzureStorageService(IConfiguration configuration)
         {
@@ -22,7 +23,6 @@ namespace Movies.API.Helpers
             await client.CreateIfNotExistsAsync();
 
             var fileName = Path.GetFileName(fileRoute);
-
             var blob = client.GetBlobClient(fileName);
 
             await blob.DeleteIfExistsAsync();
@@ -38,14 +38,15 @@ namespace Movies.API.Helpers
         public async Task<string> SaveFile(string containerName, IFormFile file)
         {
             var client = new BlobContainerClient(connectionString, containerName);
-
             await client.CreateIfNotExistsAsync();
-            client.SetAccessPolicy(Azure.Storage.Blobs.Models.PublicAccessType.Blob);
+            client.SetAccessPolicy(PublicAccessType.Blob);
 
             var extension = Path.GetExtension(file.FileName);
             var fileName = $"{Guid.NewGuid()}{extension}";
             var blob = client.GetBlobClient(fileName);
+
             await blob.UploadAsync(file.OpenReadStream());
+            a
             return blob.Uri.ToString();
         }
 
