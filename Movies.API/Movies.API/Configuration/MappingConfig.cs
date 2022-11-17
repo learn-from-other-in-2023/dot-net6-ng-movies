@@ -22,6 +22,11 @@ namespace Movies.API.Configuration
                 _ = config.CreateMap<GenreDto, Genre>().ReverseMap();
 
                 _ = config.CreateMap<GenreCreationDto, Genre>().ReverseMap();
+
+                _ = config.CreateMap<ActorDto, Actor>().ReverseMap();
+
+                _ = config.CreateMap<ActorCreationDto, Actor>()
+                    .ForMember(x => x.Picture, options => options.Ignore());
             });
 
             return mappingConfig;

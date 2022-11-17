@@ -6,13 +6,13 @@ namespace Movies.API.Entities
 
     public class MovieTheatersMovies
     {
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(maximumLength: 75)]
-        public string? Name { get; set; }
-
-        public Point Location { get; set; }
+        public int MovieTheaterId { get; set; }
+        
+        public int MovieId { get; set; }
+        
+        public MovieTheater? MovieTheater { get; set; }
+        
+        public Movie? Movie { get; set; }
     }
 
 }
