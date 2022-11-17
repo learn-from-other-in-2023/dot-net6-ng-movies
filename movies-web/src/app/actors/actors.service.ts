@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '~/environments/environment';
 import { formatDateFormData } from '~/app/utilities/utils';
-import { IActorCreationDto, IActorDto } from './actors.model';
+import { IActor, IActorCreationDto, IActorDto } from './actors.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,9 @@ export class ActorsService {
   //   JSON.stringify(name), {headers});
   // }
 
-  create(actor: IActorCreationDto) {
+  create(actor: IActor) {
     const formData = this.buildFormData(actor);
+
     return this.http.post(this.apiURL, formData);
   }
 
@@ -45,7 +46,7 @@ export class ActorsService {
     return this.http.delete(`${this.apiURL}/${id}`);
   }
 
-  private buildFormData(actor: IActorCreationDto): FormData {
+  private buildFormData(actor: IActor): FormData {
     const formData = new FormData();
 
     formData.append('name', actor.name);

@@ -70,7 +70,7 @@ namespace Movies.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> Delete([FromForm] ActorCreationDto actorCreationDto)
+        public async Task<ActionResult> Delete(int id)
         {
             var actor = await context.Actors.FirstOrDefaultAsync(x => x.Id == id);
 
