@@ -43,7 +43,7 @@ namespace Movies.API.Controllers
             var genre = await _applicationDbContext.Genres
                                                    .FirstOrDefaultAsync(x => x.Id == id);
 
-            if (genre == null)
+            if (genre is null)
             {
                 return NotFound();
             }
@@ -81,7 +81,7 @@ namespace Movies.API.Controllers
         {
             var genre = await _applicationDbContext.Genres.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (genre == null)
+            if (genre is null)
             {
                 return NotFound();
             }

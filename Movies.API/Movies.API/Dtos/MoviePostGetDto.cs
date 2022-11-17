@@ -1,0 +1,11 @@
+﻿namespace Movies.API.Dtos
+{
+
+    public class MoviePostGetDto
+    {
+        public List<GenreDto>? Genres { get; set; }
+
+        public List<MovieTheaterDto>? MovieTheaters { get; set; }
+    }
+
+}

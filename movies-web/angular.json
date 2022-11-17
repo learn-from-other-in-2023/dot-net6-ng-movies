@@ -39,7 +39,8 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "leaflet"
+              "leaflet",
+              "sweetalert2"
             ]
           },
           "configurations": {

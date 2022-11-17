@@ -11,6 +11,8 @@ export interface IActorCreationDto {
 }
 
 export interface IActorDto {
+    id: number;
+
     name: string;
 
     dateOfBirth: Date;
