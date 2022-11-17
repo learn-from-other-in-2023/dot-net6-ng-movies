@@ -46,7 +46,7 @@ namespace Movies.API.Helpers
             var blob = client.GetBlobClient(fileName);
 
             await blob.UploadAsync(file.OpenReadStream());
-            a
+            
             return blob.Uri.ToString();
         }
 
