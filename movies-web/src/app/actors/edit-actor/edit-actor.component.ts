@@ -10,6 +10,7 @@ import type { IActor } from '~/app/actors/actors.model';
 export class EditActorComponent implements OnInit {
 
   actionDto: IActor = {
+    id: 1,
     name: 'Tom Holland',
     dateOfBirth: new Date(),
     biography: '# Default Value',
