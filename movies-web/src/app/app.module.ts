@@ -5,12 +5,8 @@ import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import {HttpClientModule} from '@angular/common/http';
-
-// Need to speak to Robbie about this
-// import "leaflet/dist/images/marker-shadow.png";
-// import "leaflet/dist/images/marker-icon.png";
-// require("leaflet/dist/images/marker-shadow.png");
+import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -84,7 +80,8 @@ import { DisplayErrorsComponent } from './utilities/display-errors/display-error
     FormsModule,
     LeafletModule,
     HttpClientModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

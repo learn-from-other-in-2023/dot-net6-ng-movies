@@ -59,6 +59,8 @@ ng g c actors/actors-autocomplete
 ng g s genres/genres
 
 ng g c utilities/display-errors
+
+npm i sweetalert2 @sweetalert2/ngx-sweetalert2
 ```
 
 ## Styles
