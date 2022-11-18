@@ -29,10 +29,9 @@
             <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
         </table>
 
-        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons [length]="totalAmountOfRecords"
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons [length]="totalAmountOfRecords"
             [pageSize]="pageSize" (page)="updatePagination($event)" class="mat-elevation-z8">
-
-        </mat-paginator> -->
+        </mat-paginator>
 
     </ng-container>
 </app-generic-list>
