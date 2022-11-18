@@ -34,7 +34,7 @@ namespace Movies.API.Controllers
             await HttpContext.InsertParametersPaginationInHeader(queryable);
 
             var actors = await queryable.OrderBy(x => x.Name).Paginate(paginationDto).ToListAsync();
-            
+
             return mapper.Map<List<ActorDto>>(actors);
         }
 

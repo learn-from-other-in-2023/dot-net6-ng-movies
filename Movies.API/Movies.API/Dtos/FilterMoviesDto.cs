@@ -7,10 +7,8 @@
 
         public int RecordsPerPage { get; set; }
 
-        public PaginationDto PaginationDto
-        {
-            get { return new PaginationDto() { Page = Page, RecordsPerPage = RecordsPerPage }; }
-        }
+        public PaginationDto PaginationDto =>
+            new() { Page = Page, RecordsPerPage = RecordsPerPage };
 
         public string? Title { get; set; }
 
