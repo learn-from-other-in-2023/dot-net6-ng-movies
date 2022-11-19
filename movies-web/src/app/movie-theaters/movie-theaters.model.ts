@@ -7,6 +7,8 @@ export interface IMovieTheatersCreationDto {
 }
 
 export interface IMovieTheatersDto {
+    id: number;
+
     name: string;
 
     latitude: number;
