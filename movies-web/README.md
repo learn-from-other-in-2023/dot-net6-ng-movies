@@ -64,7 +64,9 @@ npm i sweetalert2 @sweetalert2/ngx-sweetalert2
 
 ng g s actors/actors
 
+ng g s common/services/errorhandler  
 
+ng g s movie-theaters/movie-theaters
 ```
 
 ## Styles

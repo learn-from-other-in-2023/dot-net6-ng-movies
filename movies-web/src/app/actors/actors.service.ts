@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { environment } from '~/environments/environment';
-import { formatDateFormData } from '~/app/utilities/utils';
-import { IActor, IActorCreationDto, IActorDto } from './actors.model';
+import { formatDateFormData } from "~/app/common/utilities/formatDateFormData";
+import { IActor, IActorDto } from './actors.model';
+import { ErrorhandlerService } from '~/app/common/services/errorhandler.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,23 @@ export class ActorsService {
 
   private apiURL = environment.apiURL + '/actors'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private errorHandlerService: ErrorhandlerService) { }
 
   get(page: number, recordsPerPage: number): Observable<any> {
     let params = new HttpParams();
     params = params.append('page', page.toString());
     params = params.append('recordsPerPage', recordsPerPage.toString());
-    
-    return this.http.get<IActorDto[]>(this.apiURL, { observe: 'response', params });
+
+    console.log('Before invoking the API');
+
+    return this.http.get<IActorDto[]>(this.apiURL, { observe: 'response', params })
+      .pipe(catchError(error => {
+        // 1. Pass Error to Error Handler Service
+        this.errorHandlerService.handleError(error);
+
+        // 2. Return the Default Value {body: []}
+        return of({ body: [] });
+      }));
   }
 
   getById(id: number): Observable<IActorDto> {
@@ -38,7 +48,7 @@ export class ActorsService {
     return this.http.post(this.apiURL, formData);
   }
 
-  edit(id: number, actor: IActorCreationDto) {
+  edit(id: number, actor: IActor) {
     const formData = this.buildFormData(actor);
     return this.http.put(`${this.apiURL}/${id}`, formData);
   }

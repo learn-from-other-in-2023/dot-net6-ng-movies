@@ -5,12 +5,17 @@ using Movies.API.Configuration;
 using Movies.API.Filters;
 using Movies.API.Helpers;
 using Movies.API.Persistance;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
+            , sqlOptions => sqlOptions.UseNetTopologySuite()));
+
+builder.Services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
 
 builder.Services.AddCors(options =>
 {
@@ -26,7 +31,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
-IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+var geometryFactory = builder.Services.BuildServiceProvider()?.GetRequiredService<GeometryFactory>();
+IMapper mapper = MappingConfig.RegisterMaps(geometryFactory).CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

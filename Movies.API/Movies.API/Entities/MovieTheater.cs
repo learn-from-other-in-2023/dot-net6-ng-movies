@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Drawing;
+﻿using NetTopologySuite.Geometries;
+using System.ComponentModel.DataAnnotations;
 
 namespace Movies.API.Entities
 {
@@ -10,9 +10,9 @@ namespace Movies.API.Entities
 
         [Required]
         [StringLength(maximumLength: 75)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public Point Location { get; set; }
+        public Point? Location { get; set; }
     }
 
 }

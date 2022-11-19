@@ -1,3 +1,7 @@
 <h2>Edit Actor</h2>
 
-<app-form-actor [actorDto]="actionDto" (onSaveChangesEvent)="saveChanges($event)"></app-form-actor>
+<!-- <app-form-actor [actorDto]="actorDto" (onSaveChangesEvent)="saveChanges($event)"></app-form-actor> -->
+
+<app-form-actor *ngIf="actorDto" [actorDto]="actorDto" (onSaveChangesEvent)="saveChanges($event)"></app-form-actor>
+
+<mat-spinner *ngIf="!actorDto"></mat-spinner>

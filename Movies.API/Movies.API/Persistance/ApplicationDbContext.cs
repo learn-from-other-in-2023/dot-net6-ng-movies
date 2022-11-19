@@ -29,7 +29,7 @@ namespace Movies.API.Persistance
 
         public DbSet<Actor> Actors { get; set; }
 
-        //public DbSet<MovieTheater> MovieTheaters { get; set; }
+        public DbSet<MovieTheater> MovieTheaters { get; set; }
 
         //public DbSet<Movie> Movies { get; set; }
 
