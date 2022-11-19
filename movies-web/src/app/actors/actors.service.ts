@@ -18,6 +18,7 @@ export class ActorsService {
     let params = new HttpParams();
     params = params.append('page', page.toString());
     params = params.append('recordsPerPage', recordsPerPage.toString());
+    
     return this.http.get<IActorDto[]>(this.apiURL, { observe: 'response', params });
   }
 

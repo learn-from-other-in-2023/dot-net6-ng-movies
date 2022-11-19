@@ -5,7 +5,6 @@ using Movies.API.Dtos;
 using Movies.API.Entities;
 using Movies.API.Helpers;
 using Movies.API.Persistance;
-using System.Linq;
 
 namespace Movies.API.Controllers
 {
@@ -29,9 +28,12 @@ namespace Movies.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ActorDto>>> Get()
+        public async Task<ActionResult<List<ActorDto>>> Get([FromQuery] PaginationDto paginationDto)
         {
-            var actors = await context.Actors.ToListAsync();
+            var queryable = context.Actors.AsQueryable();
+            await HttpContext.InsertParametersPaginationInHeader(queryable);
+
+            var actors = await queryable.OrderBy(x => x.Name).Paginate(paginationDto).ToListAsync();
 
             return mapper.Map<List<ActorDto>>(actors);
         }

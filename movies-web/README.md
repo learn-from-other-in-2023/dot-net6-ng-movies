@@ -63,6 +63,8 @@ ng g c utilities/display-errors
 npm i sweetalert2 @sweetalert2/ngx-sweetalert2
 
 ng g s actors/actors
+
+
 ```
 
 ## Styles
