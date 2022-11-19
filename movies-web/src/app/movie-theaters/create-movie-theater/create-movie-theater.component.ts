@@ -8,7 +8,7 @@ import { IMovieTheatersCreationDto, IMovieTheatersDto } from '../movie-theaters.
 })
 export class CreateMovieTheaterComponent implements OnInit {
 
-  movieTheatersDto: IMovieTheatersDto = { name: 'Cine Polis', latitude: 17.387140, longitude: 78.491684 };
+  movieTheatersDto: IMovieTheatersDto = { id: 1, name: 'Cine Polis', latitude: 17.387140, longitude: 78.491684 };
 
   constructor() { }
 
