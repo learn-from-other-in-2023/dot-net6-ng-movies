@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { environment } from '~/environments/environment';
 import { formatDateFormData } from "~/app/common/utilities/formatDateFormData";
-import { IActor, IActorCreationDto, IActorDto } from './actors.model';
+import { IActor, IActorDto } from './actors.model';
 import { ErrorhandlerService } from '~/app/common/services/errorhandler.service';
 
 @Injectable({
@@ -48,7 +48,7 @@ export class ActorsService {
     return this.http.post(this.apiURL, formData);
   }
 
-  edit(id: number, actor: IActorCreationDto) {
+  edit(id: number, actor: IActor) {
     const formData = this.buildFormData(actor);
     return this.http.put(`${this.apiURL}/${id}`, formData);
   }
