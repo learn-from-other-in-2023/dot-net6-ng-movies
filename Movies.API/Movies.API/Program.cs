@@ -31,7 +31,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
-IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+var geometryFactory = builder.Services.BuildServiceProvider()?.GetRequiredService<GeometryFactory>();
+IMapper mapper = MappingConfig.RegisterMaps(geometryFactory).CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
