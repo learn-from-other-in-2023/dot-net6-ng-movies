@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IGenreCreationDto } from '~/app/genres//genres.model';
 import { GenresService } from '~/app/genres/genres.service';
-import { parseWebAPIErrors } from '~/app/utilities/utils';
+import { parseWebAPIErrors } from '~/app/common/utilities/utils';
 
 @Component({
   selector: 'app-create-genre',

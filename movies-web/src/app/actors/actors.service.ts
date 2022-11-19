@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { environment } from '~/environments/environment';
-import { formatDateFormData } from '~/app/utilities/utils';
+import { formatDateFormData } from '~/app/common/utilities/utils';
 import { IActor, IActorCreationDto, IActorDto } from './actors.model';
 import { ErrorhandlerService } from '~/app/common/services/errorhandler.service';
 

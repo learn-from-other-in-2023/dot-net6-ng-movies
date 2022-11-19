@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { fileToBase64 } from '../utils';
+import { fileToBase64 } from '../../common/utilities/utils';
 
 @Component({
   selector: 'app-input-img',
