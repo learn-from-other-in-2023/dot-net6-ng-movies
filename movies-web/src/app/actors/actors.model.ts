@@ -21,3 +21,13 @@ export interface IActorDto {
 
     biography: string;
 }
+
+export interface IActorsMovieDto {
+    id: number;
+
+    name: string;
+    
+    character: string;
+    
+    picture: string;
+}
