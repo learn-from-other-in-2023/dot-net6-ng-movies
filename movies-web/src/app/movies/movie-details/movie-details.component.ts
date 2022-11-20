@@ -23,6 +23,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.moviesService.getById(params['id']).subscribe((movie) => {
+        console.log(movie);
         this.movie = movie;
         this.releaseDate = new Date(movie.releaseDate);
         this.trailerURL = this.generateYoutubeURLForEmbeddedVideo(movie.trailer);
