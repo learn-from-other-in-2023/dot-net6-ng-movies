@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { marker, tileLayer, latLng, Marker, LeafletMouseEvent, icon, Icon } from 'leaflet';
-import { ICoordinatesMap } from './coordinate';
+import { ICoordinatesMap, ICoordinatesMapWithMessage } from './coordinate';
 
 @Component({
   selector: 'app-map',
@@ -10,7 +10,7 @@ import { ICoordinatesMap } from './coordinate';
 export class MapComponent implements OnInit {
 
   @Input()
-  initialCoordinates: ICoordinatesMap[] = [];
+  initialCoordinates: ICoordinatesMapWithMessage[] = [];
 
   @Input()
   editMode: boolean = true;
@@ -34,7 +34,15 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.initialCoordinates);
 
-    this.markerLayers = this.initialCoordinates.map(value => this.getMarker(value.latitude, value.longitude));
+    this.markerLayers = this.initialCoordinates.map((value: any) => {
+      const m = this.getMarker(value.latitude, value.longitude);
+
+      if (value.message) {
+        m.bindPopup(value.message, { autoClose: false, autoPan: false });
+      }
+
+      return m;
+    });
   }
 
   mapComponentOptions = {
