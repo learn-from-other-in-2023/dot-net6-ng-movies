@@ -20,21 +20,33 @@ export class FormMovieComponent implements OnInit {
   @Output()
   onMovieSaveChangesEvent = new EventEmitter<IMovieCreationDto>();
 
-  nonSelectedGenres: IMultipleSelectorModel[] = [
-    { key: 1, value: 'Drama' },
-    { key: 2, value: 'Action' },
-    { key: 3, value: 'Comedy' },
-  ];
+  @Input()
+  nonSelectedGenres: IMultipleSelectorModel[] = [];
 
+  @Input()
   selectedGenres: IMultipleSelectorModel[] = [];
 
-  nonSelectedMovieTheaters: IMultipleSelectorModel[] = [
-    { key: 1, value: 'Agora' },
-    { key: 2, value: 'Sambil' },
-    { key: 3, value: 'Megacentro' },
-  ]
+  @Input()
+  nonSelectedMovieTheaters: IMultipleSelectorModel[] = [];
 
+  @Input()
   selectedMovieTheaters: IMultipleSelectorModel[] = [];
+
+  // nonSelectedGenres: IMultipleSelectorModel[] = [
+  //   { key: 1, value: 'Drama' },
+  //   { key: 2, value: 'Action' },
+  //   { key: 3, value: 'Comedy' },
+  // ];
+
+  // selectedGenres: IMultipleSelectorModel[] = [];
+
+  // nonSelectedMovieTheaters: IMultipleSelectorModel[] = [
+  //   { key: 1, value: 'Agora' },
+  //   { key: 2, value: 'Sambil' },
+  //   { key: 3, value: 'Megacentro' },
+  // ]
+
+  // selectedMovieTheaters: IMultipleSelectorModel[] = [];
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
