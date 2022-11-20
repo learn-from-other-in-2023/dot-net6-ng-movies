@@ -43,10 +43,10 @@ namespace Movies.API.Configuration
                 .ForMember(x => x.MovieTheatersMovies, options => options.MapFrom(MapMovieTheatersMovies))
                 .ForMember(x => x.MoviesActors, options => options.MapFrom(MapMoviesActors));
 
-                //CreateMap<Movie, MovieDTO>()
-                //    .ForMember(x => x.Genres, options => options.MapFrom(MapMoviesGenres))
-                //    .ForMember(x => x.MovieTheaters, options => options.MapFrom(MapMovieTheatersMovies))
-                //    .ForMember(x => x.Actors, options => options.MapFrom(MapMoviesActors));
+                _ = config.CreateMap<Movie, MovieDto>()
+                    .ForMember(x => x.Genres, options => options.MapFrom(MapMoviesGenres))
+                    .ForMember(x => x.MovieTheaters, options => options.MapFrom(MapMovieTheatersMovies))
+                    .ForMember(x => x.Actors, options => options.MapFrom(MapMoviesActors));
 
             });
 
