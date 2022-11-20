@@ -28,9 +28,10 @@ export class ActorsAutocompleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.control.valueChanges.subscribe(value => {
-      this.actorsService.searchByName(value).subscribe(actors => {
-        this.actorsToDisplay = actors;
-      });
+      this.actorsService.searchByName(value)
+        .subscribe(actors => {
+          this.actorsToDisplay = actors;
+        });
     });
   }
 
