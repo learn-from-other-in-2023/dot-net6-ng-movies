@@ -68,7 +68,9 @@ ng g s common/services/errorhandler
 
 ng g s movie-theaters/movie-theaters
 
-ng g s movies/movies
+ng g s movies/
+
+ng g c movies/movie-details
 ```
 
 ## Styles

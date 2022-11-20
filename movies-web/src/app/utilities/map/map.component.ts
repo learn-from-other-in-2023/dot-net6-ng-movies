@@ -12,6 +12,9 @@ export class MapComponent implements OnInit {
   @Input()
   initialCoordinates: ICoordinatesMap[] = [];
 
+  @Input()
+  editMode: boolean = true;
+
   @Output()
   onSelectedLocationEvent = new EventEmitter<ICoordinatesMap>();
 
@@ -38,7 +41,7 @@ export class MapComponent implements OnInit {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution: 'Angular Movies'
+        attribution: 'Movies World'
       })
     ],
     zoom: 14,
@@ -46,14 +49,16 @@ export class MapComponent implements OnInit {
   };
 
   handleMapClick(event: LeafletMouseEvent) {
-    const latitude = event.latlng.lat;
-    const longitude = event.latlng.lng;
-    console.log({ latitude, longitude });
+    if (this.editMode) {
+      const latitude = event.latlng.lat;
+      const longitude = event.latlng.lng;
+      console.log({ latitude, longitude });
 
-    this.markerLayers = [];
-    this.markerLayers.push(this.getMarker(latitude, longitude));
+      this.markerLayers = [];
+      this.markerLayers.push(this.getMarker(latitude, longitude));
 
-    this.onSelectedLocationEvent.emit({ latitude, longitude });
+      this.onSelectedLocationEvent.emit({ latitude, longitude });
+    }
   }
 
   getMarker(latitude: number, longitude: number): Marker | any {
