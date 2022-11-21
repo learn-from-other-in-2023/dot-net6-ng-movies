@@ -1,9 +1,9 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { environment } from '~/environments/environment';
 import { formatDateFormData } from "~/app/common/utilities/formatDateFormData";
-import { IActor, IActorDto } from './actors.model';
+import { IActor, IActorDto, IActorsMovieDto } from './actors.model';
 import { ErrorhandlerService } from '~/app/common/services/errorhandler.service';
 
 @Injectable({
@@ -36,11 +36,11 @@ export class ActorsService {
     return this.http.get<IActorDto>(`${this.apiURL}/${id}`);
   }
 
-  // searchByName(name: string): Observable<IActorsMovieDto[]>{
-  //   const headers = new HttpHeaders('Content-Type: application/json');
-  //   return this.http.post<actorsMovieDTO[]>(`${this.apiURL}/searchByName`, 
-  //   JSON.stringify(name), {headers});
-  // }
+  searchByName(name: string): Observable<IActorsMovieDto[]>{
+    const headers = new HttpHeaders('Content-Type: application/json');
+    return this.http.post<IActorsMovieDto[]>(`${this.apiURL}/searchByName`, 
+    JSON.stringify(name), {headers});
+  }
 
   create(actor: IActor) {
     const formData = this.buildFormData(actor);

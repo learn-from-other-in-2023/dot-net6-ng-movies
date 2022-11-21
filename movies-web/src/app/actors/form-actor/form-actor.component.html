@@ -19,7 +19,7 @@
 
     <h4>Biography</h4>
 
-    <app-input-markdown [markdownInputContent]="actorDto?.biography ?? ''"
+    <app-input-markdown [markdownInputContent]="actorDto?.biography ?? ''" [label]="'Biography'"
         (changeMarkdownEvent)="changeMarkdown($event)">
     </app-input-markdown>
 

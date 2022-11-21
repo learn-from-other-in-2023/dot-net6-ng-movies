@@ -10,6 +10,9 @@ export class InputMarkdownComponent implements OnInit {
   @Input()
   markdownInputContent = '';
 
+  @Input()
+  label = 'Value';
+
   @Output()
   changeMarkdownEvent = new EventEmitter<string | any>();
 

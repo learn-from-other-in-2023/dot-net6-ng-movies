@@ -13,14 +13,14 @@ namespace Movies.API.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<MoviesActors>()
-            //    .HasKey(x => new { x.ActorId, x.MovieId });
+            modelBuilder.Entity<MoviesActors>()
+                .HasKey(x => new { x.ActorId, x.MovieId });
 
-            //modelBuilder.Entity<MoviesGenres>()
-            //    .HasKey(x => new { x.GenreId, x.MovieId });
+            modelBuilder.Entity<MoviesGenres>()
+                .HasKey(x => new { x.GenreId, x.MovieId });
 
-            //modelBuilder.Entity<MovieTheatersMovies>()
-            //    .HasKey(x => new { x.MovieTheaterId, x.MovieId });
+            modelBuilder.Entity<MovieTheatersMovies>()
+                .HasKey(x => new { x.MovieTheaterId, x.MovieId });
 
             base.OnModelCreating(modelBuilder);
         }
@@ -31,13 +31,13 @@ namespace Movies.API.Persistance
 
         public DbSet<MovieTheater> MovieTheaters { get; set; }
 
-        //public DbSet<Movie> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
-        //public DbSet<MoviesActors> MoviesActors { get; set; }
+        public DbSet<MoviesActors> MoviesActors { get; set; }
 
-        //public DbSet<MoviesGenres> MoviesGenres { get; set; }
+        public DbSet<MoviesGenres> MoviesGenres { get; set; }
 
-        //public DbSet<MovieTheatersMovies> MovieTheatersMovies { get; set; }
+        public DbSet<MovieTheatersMovies> MovieTheatersMovies { get; set; }
     }
 
 }
