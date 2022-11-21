@@ -49,6 +49,7 @@ namespace Movies.API.Controllers
             var homeDto = new HomeDto
             {
                 UpcomingReleases = mapper.Map<List<MovieDto>>(upcomingReleases),
+
                 InTheaters = mapper.Map<List<MovieDto>>(inTheaters)
             };
 
