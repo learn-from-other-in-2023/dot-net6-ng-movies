@@ -105,6 +105,7 @@ namespace Movies.API.Controllers
             }
 
             await HttpContext.InsertParametersPaginationInHeader(moviesQueryable);
+
             var movies = await moviesQueryable.OrderBy(x => x.Title)
                 .Paginate(filterMoviesDTO.PaginationDto)
                 .ToListAsync();
