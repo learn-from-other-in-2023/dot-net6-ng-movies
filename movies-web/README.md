@@ -79,6 +79,8 @@ ng g s security/security
 ng g guard guards/is-admin
 
 ng g c security/login
+
+ng g c security/authentication-form
 ```
 
 ## Styles
