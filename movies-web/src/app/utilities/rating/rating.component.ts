@@ -14,7 +14,7 @@ export class RatingComponent implements OnInit {
   selectedRate = 0;
 
   @Output()
-  onRating: EventEmitter<number> = new EventEmitter<number>();
+  onRatingEvent: EventEmitter<number> = new EventEmitter<number>();
 
   previousRate = 0;
 
@@ -41,7 +41,7 @@ export class RatingComponent implements OnInit {
   rate(index: number) {
     this.selectedRate = index + 1;
     this.previousRate = this.selectedRate;
-    this.onRating.emit(this.selectedRate);
+    this.onRatingEvent.emit(this.selectedRate);
   }
 
 }
