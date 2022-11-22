@@ -9,6 +9,7 @@ using Movies.API.Helpers;
 using Movies.API.Persistance;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +41,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IFileStorageService, AzureStorageService>();
 builder.Services.AddHttpContextAccessor();
+
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<ApplicationDbContext>()
