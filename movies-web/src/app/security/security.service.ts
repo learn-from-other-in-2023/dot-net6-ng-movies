@@ -34,6 +34,7 @@ export class SecurityService {
   }
 
   isAuthenticated(): boolean {
+    // return true;
     const token = localStorage.getItem(this.tokenKey);
 
     if (!token) {
