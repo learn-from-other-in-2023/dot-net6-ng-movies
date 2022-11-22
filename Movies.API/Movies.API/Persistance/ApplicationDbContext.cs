@@ -39,6 +39,8 @@ namespace Movies.API.Persistance
         public DbSet<MoviesGenres> MoviesGenres { get; set; }
 
         public DbSet<MovieTheatersMovies> MovieTheatersMovies { get; set; }
+
+        public DbSet<Rating> Ratings { get; set; }
     }
 
 }
