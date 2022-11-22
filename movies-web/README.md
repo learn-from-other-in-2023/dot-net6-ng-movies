@@ -85,6 +85,8 @@ ng g c security/authentication-form
 ng g c security/register
 
 ng g s utilities/rating
+
+ng g s security/jwt-interceptor
 ```
 
 ## Styles
