@@ -12,7 +12,7 @@ export class SecurityService {
   private apiURL = environment.apiURL + "/accounts";
   private readonly tokenKey: string = 'token';
   private readonly expirationTokenKey: string = 'token-expiration'
-  private readonly roleField = "admin";
+  private readonly roleField = "role";
 
   constructor(private http: HttpClient) { }
 
