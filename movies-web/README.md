@@ -81,6 +81,8 @@ ng g guard guards/is-admin
 ng g c security/login
 
 ng g c security/authentication-form
+
+ng g c security/register
 ```
 
 ## Styles

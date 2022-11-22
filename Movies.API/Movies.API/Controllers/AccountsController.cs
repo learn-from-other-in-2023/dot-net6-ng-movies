@@ -99,7 +99,7 @@ namespace Movies.API.Controllers
             }
         }
 
-        private async Task<AuthenticationResponse> BuildToken(UserCredentialsDto userCredentials)
+        private async Task<AuthenticationResponseDto> BuildToken(UserCredentialsDto userCredentials)
         {
             var claims = new List<Claim>()
             {
@@ -119,7 +119,7 @@ namespace Movies.API.Controllers
             var token = new JwtSecurityToken(issuer: null, audience: null, claims: claims,
                 expires: expiration, signingCredentials: creds);
 
-            return new AuthenticationResponse()
+            return new AuthenticationResponseDto()
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 Expiration = expiration
