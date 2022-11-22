@@ -71,6 +71,10 @@ ng g s movie-theaters/movie-theaters
 ng g s movies/
 
 ng g c movies/movie-details
+
+ng g c security/authorize-view
+
+ng g s security/security
 ```
 
 ## Styles
