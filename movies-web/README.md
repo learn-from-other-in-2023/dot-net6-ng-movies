@@ -75,6 +75,10 @@ ng g c movies/movie-details
 ng g c security/authorize-view
 
 ng g s security/security
+
+ng g guard guards/is-admin
+
+ng g c security/login
 ```
 
 ## Styles

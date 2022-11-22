@@ -15,10 +15,11 @@ import { CreateMovieComponent } from './movies/create-movie/create-movie.compone
 import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 import { MovieFilterComponent } from './movies/movie-filter/movie-filter.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { IsAdminGuard } from './guards/is-admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'genres', component: IndexGenresComponent },
+  { path: 'genres', component: IndexGenresComponent, canActivate: [IsAdminGuard] },
   { path: 'genres/create', component: CreateGenreComponent },
   { path: 'genres/edit/:id', component: EditGenreComponent },
   { path: 'actors', component: IndexActorsComponent },
