@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import { ICoordinatesMapWithMessage } from '~/app/utilities/map/coordinate';
+import { RatingService } from '~/app/utilities/rating.service';
 import { IMovieDto } from '../movies.model';
 import { MoviesService } from '../movies.service';
 
