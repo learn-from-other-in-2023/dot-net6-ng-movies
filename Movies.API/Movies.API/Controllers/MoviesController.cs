@@ -49,6 +49,7 @@ namespace Movies.API.Controllers
             var homeDto = new HomeDto
             {
                 UpcomingReleases = mapper.Map<List<MovieDto>>(upcomingReleases),
+
                 InTheaters = mapper.Map<List<MovieDto>>(inTheaters)
             };
 
@@ -104,6 +105,7 @@ namespace Movies.API.Controllers
             }
 
             await HttpContext.InsertParametersPaginationInHeader(moviesQueryable);
+
             var movies = await moviesQueryable.OrderBy(x => x.Title)
                 .Paginate(filterMoviesDTO.PaginationDto)
                 .ToListAsync();
