@@ -24,7 +24,8 @@ namespace Movies.API.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly string container = "movies";
 
-        public MoviesController(ApplicationDbContext context, IMapper mapper, IFileStorageService fileStorageService)
+        public MoviesController(ApplicationDbContext context, IMapper mapper, IFileStorageService fileStorageService
+            , UserManager<IdentityUser> userManager)
         {
             this.context = context ?? throw new ArgumentNullException(nameof(context));
 
