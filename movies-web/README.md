@@ -83,6 +83,8 @@ ng g c security/login
 ng g c security/authentication-form
 
 ng g c security/register
+
+ng g s utilities/rating
 ```
 
 ## Styles
