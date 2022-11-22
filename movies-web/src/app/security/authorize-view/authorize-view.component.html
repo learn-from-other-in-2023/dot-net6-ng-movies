@@ -1,1 +1,2 @@
-<p>authorize-view works!</p>
+<ng-content *ngIf="!isAuthorized()" select="[notAuthorized]"></ng-content>
+<ng-content *ngIf="isAuthorized()" select="[authorized]"></ng-content>

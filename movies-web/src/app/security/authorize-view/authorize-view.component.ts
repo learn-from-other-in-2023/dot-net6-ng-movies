@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SecurityService } from '../security.service';
 
 @Component({
   selector: 'app-authorize-view',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorizeViewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  role: string | any;
+
+  constructor(private securityService: SecurityService) { }
 
   ngOnInit(): void {
+  }
+
+  public isAuthorized() {
+    if (this.role) {
+      return this.securityService.getRole() === this.role;
+    } else {
+      return this.securityService.isAuthenticated();
+    }
   }
 
 }
