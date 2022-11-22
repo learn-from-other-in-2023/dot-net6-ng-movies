@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Movies.API.Dtos;
 using Movies.API.Entities;
 using NetTopologySuite.Geometries;
@@ -48,6 +49,7 @@ namespace Movies.API.Configuration
                     .ForMember(x => x.MovieTheaters, options => options.MapFrom(MapMovieTheatersMovies))
                     .ForMember(x => x.Actors, options => options.MapFrom(MapMoviesActors));
 
+                _ = config.CreateMap<IdentityUser, UserDto>();
             });
 
             return mappingConfig;
