@@ -41,7 +41,8 @@ import { DisplayErrorsComponent } from './utilities/display-errors/display-error
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { AuthorizeViewComponent } from './security/authorize-view/authorize-view.component';
 import { LoginComponent } from './security/login/login.component';
-import { AuthenticationFormComponent } from './security/authentication-form/authentication-form.component'
+import { AuthenticationFormComponent } from './security/authentication-form/authentication-form.component';
+import { RegisterComponent } from './security/register/register.component'
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { AuthenticationFormComponent } from './security/authentication-form/auth
     MovieDetailsComponent,
     AuthorizeViewComponent,
     LoginComponent,
-    AuthenticationFormComponent
+    AuthenticationFormComponent,
+    RegisterComponent
   ],
   imports: [
     AppRoutingModule,
