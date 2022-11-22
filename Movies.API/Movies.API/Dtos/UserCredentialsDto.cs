@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Movies.API.Entities
+namespace Movies.API.Dtos
 {
 
-    public class UserCredentials
+    public class UserCredentialsDto
     {
         [Required]
         [EmailAddress]

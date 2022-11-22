@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Movies.API.Dtos;
-using Movies.API.Entities;
 using Movies.API.Helpers;
 using Movies.API.Persistance;
 using System.IdentityModel.Tokens.Jwt;
@@ -69,7 +68,7 @@ namespace Movies.API.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<AuthenticationResponseDto>> Create([FromBody] UserCredentials userCredentials)
+        public async Task<ActionResult<AuthenticationResponseDto>> Create([FromBody] UserCredentialsDto userCredentials)
         {
             var user = new IdentityUser { UserName = userCredentials.Email, Email = userCredentials.Email };
             var result = await userManager.CreateAsync(user, userCredentials.Password);
@@ -85,7 +84,7 @@ namespace Movies.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<AuthenticationResponseDto>> Login([FromBody] UserCredentials userCredentials)
+        public async Task<ActionResult<AuthenticationResponseDto>> Login([FromBody] UserCredentialsDto userCredentials)
         {
             var result = await signInManager.PasswordSignInAsync(userCredentials.Email,
                 userCredentials.Password, isPersistent: false, lockoutOnFailure: false);
@@ -100,7 +99,7 @@ namespace Movies.API.Controllers
             }
         }
 
-        private async Task<AuthenticationResponse> BuildToken(UserCredentials userCredentials)
+        private async Task<AuthenticationResponse> BuildToken(UserCredentialsDto userCredentials)
         {
             var claims = new List<Claim>()
             {
