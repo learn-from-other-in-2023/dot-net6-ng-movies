@@ -71,6 +71,22 @@ ng g s movie-theaters/movie-theaters
 ng g s movies/
 
 ng g c movies/movie-details
+
+ng g c security/authorize-view
+
+ng g s security/security
+
+ng g guard guards/is-admin
+
+ng g c security/login
+
+ng g c security/authentication-form
+
+ng g c security/register
+
+ng g s utilities/rating
+
+ng g s security/jwt-interceptor
 ```
 
 ## Styles

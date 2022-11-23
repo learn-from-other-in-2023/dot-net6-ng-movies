@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Movies.API.Entities;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Movies.API.Persistance
 {
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext([NotNullAttribute] DbContextOptions options) : base(options)
         {
@@ -38,6 +39,8 @@ namespace Movies.API.Persistance
         public DbSet<MoviesGenres> MoviesGenres { get; set; }
 
         public DbSet<MovieTheatersMovies> MovieTheatersMovies { get; set; }
+
+        public DbSet<Rating> Ratings { get; set; }
     }
 
 }

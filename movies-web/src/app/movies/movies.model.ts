@@ -42,6 +42,10 @@ export interface IMovieDto {
     movieTheaters: IMovieTheatersDto[];
 
     actors: IActorsMovieDto[];
+
+    averageVote: number;
+
+    userVote: number;
 }
 
 export interface IMoviePostGetDto {

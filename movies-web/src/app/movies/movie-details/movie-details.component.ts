@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import { ICoordinatesMapWithMessage } from '~/app/utilities/map/coordinate';
+import { RatingService } from '~/app/utilities/rating.service';
 import { IMovieDto } from '../movies.model';
 import { MoviesService } from '../movies.service';
 
@@ -17,7 +19,8 @@ export class MovieDetailsComponent implements OnInit {
   trailerURL: SafeResourceUrl | any;
   coordinates: ICoordinatesMapWithMessage[] = [];
 
-  constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer) {
+  constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer
+    , private ratingsService: RatingService) {
   }
 
   ngOnInit(): void {
@@ -49,6 +52,12 @@ export class MovieDetailsComponent implements OnInit {
     }
 
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${videoId}`);
+  }
+
+  onRating(rate: number){
+    this.ratingsService.rate(this.movie.id, rate).subscribe(() => {
+      Swal.fire("Success", "Your vote has been received", "success");
+    });
   }
 
 }
