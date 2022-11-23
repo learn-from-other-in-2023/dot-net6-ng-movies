@@ -27,8 +27,8 @@ namespace Movies.API.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        // api/genres
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GenreDto>>> Get()
         {
             _logger.LogInformation("Getting all the genres");
