@@ -87,6 +87,9 @@ ng g c security/register
 ng g s utilities/rating
 
 ng g s security/jwt-interceptor
+
+ng g c security/users-index
+
 ```
 
 ## Styles
