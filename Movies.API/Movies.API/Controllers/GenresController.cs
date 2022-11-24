@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies.API.Dtos;
@@ -9,6 +11,7 @@ namespace Movies.API.Controllers
 {
     [Route("api/genres")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "IsAdmin")]
     public class GenresController : ControllerBase
     {
         private readonly ILogger<GenresController> _logger;
@@ -24,8 +27,8 @@ namespace Movies.API.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        // api/genres
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GenreDto>>> Get()
         {
             _logger.LogInformation("Getting all the genres");

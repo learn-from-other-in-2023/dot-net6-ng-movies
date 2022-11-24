@@ -26,7 +26,7 @@ namespace Movies.API.Controllers
         }
 
         [HttpPost]
-        // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult> Post([FromBody] RatingDto ratingDTO)
         {
             var email = HttpContext?.User?.Claims.FirstOrDefault(x => x.Type == "email")?.Value;
