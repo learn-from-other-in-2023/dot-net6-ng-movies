@@ -68,7 +68,8 @@
               "browserTarget": "products-web:build:production"
             },
             "development": {
-              "browserTarget": "products-web:build:development"
+              "browserTarget": "products-web:build:development",
+              "port": 4009
             }
           },
           "defaultConfiguration": "development"
