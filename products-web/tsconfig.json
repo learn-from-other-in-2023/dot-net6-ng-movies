@@ -3,6 +3,20 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+      "~assets/*": [
+        "src/assets/*"
+      ],
+      "~modules/*": [
+        "src/modules/*"
+      ],
+      "~core/*": [
+        "src/app/core/*"
+      ]
+    },
     "outDir": "./dist/products-web",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
