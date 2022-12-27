@@ -18,8 +18,12 @@ app-authorize-view {
 }
 
 img {
-    // margin-top: 10px;
     max-height: 32px;
     border: 2px solid #fff;
     display: inline;
+}
+
+.logged-in {
+    display: flex;
+    align-items: center;
 }
