@@ -18,7 +18,7 @@ const components = [
   ],
   imports: [
     CommonModule,
-    NgmaterialModule
+    NgmaterialModule,
   ]
 })
 export class SharedModule { }
