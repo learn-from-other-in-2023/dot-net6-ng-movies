@@ -23,15 +23,13 @@
     </div>
 
     <div>
-        <div class="dropdown" dropdown>
-            <img src="./assets/images/user.png" alt="Sri Varu">
-            <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome Sri Varu</a>
-            <div class="dropdown-menu mt-2" *dropdownMenu>
-                <a routerLink='/member/edit' class="dropdown-item">Edit Profile</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item">Logout</a>
-            </div>
-        </div>
+        <img src="./assets/images/user.png" alt="Sri Varu">
+        <button mat-button [matMenuTriggerFor]="afterMenu">Welcome,
+            Sri Varu</button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
     </div>
 
 </mat-toolbar>

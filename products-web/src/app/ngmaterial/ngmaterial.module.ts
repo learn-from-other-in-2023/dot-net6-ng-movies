@@ -17,6 +17,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatChipsModule } from '@angular/material/chips'
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -37,7 +38,8 @@ import { MatChipsModule } from '@angular/material/chips'
     DragDropModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatChipsModule
+    MatChipsModule,
+    MatMenuModule
   ],
   imports: [
     CommonModule
