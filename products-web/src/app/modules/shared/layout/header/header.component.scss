@@ -16,3 +16,14 @@ app-authorize-view {
 .mat-toolbar-single-row {
     height: 48px;
 }
+
+img {
+    max-height: 32px;
+    border: 2px solid #fff;
+    display: inline;
+}
+
+.logged-in {
+    display: flex;
+    align-items: center;
+}

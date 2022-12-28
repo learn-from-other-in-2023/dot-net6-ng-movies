@@ -1,4 +1,39 @@
 <mat-toolbar color="primary">
+    <span>
+        <a routerLink="" mat-button>
+            <mat-icon>store</mat-icon> Products Store
+        </a>
+    </span>
+
+    <div class="space">
+    </div>
+
+    <div>
+        <a mat-button routerLink="home"> Home </a>
+    </div>
+
+    <div class="space">
+    </div>
+
+    <div>
+        <a mat-button routerLink="products"> Products </a>
+    </div>
+
+    <div class="space">
+    </div>
+
+    <div class="logged-in">
+        <img src="./assets/images/user.png" alt="Sri Varu">
+        <button mat-button [matMenuTriggerFor]="afterMenu">Welcome,
+            Sri Varu</button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    </div>
+
+</mat-toolbar>
+<!-- <mat-toolbar color="primary">
 
     <div>
         <span>
@@ -12,7 +47,7 @@
     </div>
 
     <div>
-        <a mat-button routerLink="genres"> Home </a>
+        <a mat-button routerLink="home"> Home </a>
     </div>
 
     <div class="space">
@@ -25,7 +60,8 @@
     <div class="space">
     </div>
 
-</mat-toolbar>
+</mat-toolbar> -->
+
 <!-- <mat-toolbar color="primary">
     
 
