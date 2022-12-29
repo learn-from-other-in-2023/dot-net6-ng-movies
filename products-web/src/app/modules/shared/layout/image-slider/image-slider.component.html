@@ -2,5 +2,23 @@
     Reference: https://www.youtube.com/watch?v=Au4VfcwvjgQ
 -->
 <div class="container">
-    <p>image-slider works!</p>
+    <div class="slider">
+        <div>
+          <div (click)="goToPrevious()" class="leftArrow">❰</div>
+          <div (click)="goToNext()" class="rightArrow">❱</div>
+        </div>
+        <div
+          class="slide"
+          [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+        ></div>
+        <div class="dotsContainer">
+          <div
+            *ngFor="let slide of slides; let slideIndex = index"
+            class="dot"
+            (click)="goToSlide(slideIndex)"
+          >
+            ●
+          </div>
+        </div>
+      </div>
 </div>
