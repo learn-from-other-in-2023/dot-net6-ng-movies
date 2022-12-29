@@ -4,15 +4,18 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { NgmaterialModule } from '~/app/ngmaterial/ngmaterial.module';
 import { RouterModule } from '@angular/router';
+import { ImageSliderComponent } from './layout/image-slider/image-slider.component';
 
 const components = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  ImageSliderComponent
 ];
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    ImageSliderComponent
   ],
   exports: [
     ...components
