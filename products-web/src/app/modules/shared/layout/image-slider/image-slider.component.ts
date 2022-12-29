@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ISlide } from '~/app/interfaces/islide.interface';
 
 @Component({
   selector: 'app-image-slider',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./image-slider.component.scss']
 })
 export class ImageSliderComponent {
+
+  @Input()
+  slides: ISlide[] = [];
 
 }
