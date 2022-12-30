@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './modules/home/home.component';
 import { ProductsListComponent } from './modules/products/products-list/products-list.component';
 import { NotFoundComponent } from './core/errors/not-found/not-found.component';
+import { ProductQuickviewComponent } from './modules/products/product-quickview/product-quickview.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NotFoundComponent } from './core/errors/not-found/not-found.component';
     HomeComponent,
     ProductsListComponent,
     NotFoundComponent,
+    ProductQuickviewComponent,
   ],
   imports: [
     BrowserModule,
