@@ -1,8 +1,8 @@
 <mat-card class="example-card">
-    <img mat-card-image src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="product.thumbnailUrl" alt="product.title">
     <mat-card-content>
         <p>
-            Product Name | Price: $ 100
+            {{product.title}} | Price: {{product.price | currency}}
         </p>
     </mat-card-content>
     <mat-card-actions>
