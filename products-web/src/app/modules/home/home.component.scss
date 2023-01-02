@@ -1,10 +1,13 @@
+.featured-products {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 94%;
+    background-color: rgb(242, 249, 252);
+    text-align: center;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
-    max-width: 91%;
-    padding: 0 20px;
-    background-color: rgb(242, 249, 252);
-    text-align: center;
 }
