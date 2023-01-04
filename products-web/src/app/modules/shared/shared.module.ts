@@ -5,6 +5,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NgmaterialModule } from '~/app/ngmaterial/ngmaterial.module';
 import { RouterModule } from '@angular/router';
 import { ImageSliderComponent } from './layout/image-slider/image-slider.component';
+import { MessageBandComponent } from './layout/message-band/message-band.component';
 
 const components = [
   HeaderComponent,
@@ -15,7 +16,8 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
-    ImageSliderComponent
+    ImageSliderComponent,
+    MessageBandComponent
   ],
   exports: [
     ...components
