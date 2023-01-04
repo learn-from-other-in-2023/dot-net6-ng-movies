@@ -10,7 +10,8 @@ import { MessageBandComponent } from './layout/message-band/message-band.compone
 const components = [
   HeaderComponent,
   FooterComponent,
-  ImageSliderComponent
+  ImageSliderComponent,
+  MessageBandComponent
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-message-band',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class MessageBandComponent {
 
+  @Input() 
+  message?: string = 'Messages will be displayed. Example: Offers etc.';
+  
 }
