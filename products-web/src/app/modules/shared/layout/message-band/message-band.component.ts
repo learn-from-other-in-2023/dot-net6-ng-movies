@@ -8,6 +8,9 @@ import { Component, Input } from '@angular/core';
 export class MessageBandComponent {
 
   @Input() 
-  message?: string = 'Messages will be displayed. Example: Offers etc.';
+  message?: string = 'No Message.';
+
+  @Input() 
+  showBand: boolean = true;
   
 }
