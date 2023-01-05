@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
   title = 'Products Store';
+  message?: string = 'Messages will be displayed. Example: Offers etc.';
+
 }
